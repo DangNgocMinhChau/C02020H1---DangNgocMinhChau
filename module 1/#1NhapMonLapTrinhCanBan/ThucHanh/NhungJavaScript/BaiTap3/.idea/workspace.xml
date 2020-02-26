@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bacf074-f09d-4b1a-addb-dcad3b8c861c" name="Default Changelist" comment="" />
+    <list default="true" id="fda15e39-a7c1-4af9-ac48-f226895089d0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,10 +11,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
-  <component name="ProjectId" id="1YKq1kuBZA7gpe4Ikp7atTNRi4w" />
+  <component name="ProjectId" id="1YLImQJAgbxZlH44KLRfpHb6gtd" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -30,12 +31,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5bacf074-f09d-4b1a-addb-dcad3b8c861c" name="Default Changelist" comment="" />
-      <created>1582701420299</created>
+      <changelist id="fda15e39-a7c1-4af9-ac48-f226895089d0" name="Default Changelist" comment="" />
+      <created>1582715605219</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1582701420299</updated>
-      <workItem from="1582701421760" duration="276000" />
+      <updated>1582715605219</updated>
+      <workItem from="1582715606375" duration="228000" />
     </task>
     <servers />
   </component>
