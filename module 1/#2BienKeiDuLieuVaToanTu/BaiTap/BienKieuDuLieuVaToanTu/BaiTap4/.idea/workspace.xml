@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1d7974a-5b96-4910-abac-f4864ee308a7" name="Default Changelist" comment="" />
+    <list default="true" id="4117b989-a4a9-42e1-99bb-d801851ff4c1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../BaiTap1/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BaiTap2/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BaiTap3/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SuDungToanTu/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../SuDungToanTu/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,9 +21,9 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
   </component>
-  <component name="ProjectId" id="1YLc2r2MWlPaAvEadeVdNRLwlJ2" />
+  <component name="ProjectId" id="1YLkcLUbKD5Fqz0rV71OmIeRbeb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,23 +40,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b1d7974a-5b96-4910-abac-f4864ee308a7" name="Default Changelist" comment="" />
-      <created>1582725110083</created>
+      <changelist id="4117b989-a4a9-42e1-99bb-d801851ff4c1" name="Default Changelist" comment="" />
+      <created>1582729339568</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1582725110083</updated>
-      <workItem from="1582725111604" duration="469000" />
-      <workItem from="1582725751351" duration="23000" />
+      <updated>1582729339568</updated>
+      <workItem from="1582729341064" duration="266000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="462" y="107" key="FileChooserDialogImpl" timestamp="1582725772292">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="462" y="107" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582725772292" />
   </component>
 </project>
