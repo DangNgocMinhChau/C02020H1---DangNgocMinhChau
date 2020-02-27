@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4117b989-a4a9-42e1-99bb-d801851ff4c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../BaiTap1/demo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BaiTap2/demo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BaiTap3/demo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SuDungToanTu/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../SuDungToanTu/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UngDungChuyenDoiTienTe/demo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BaiTap3/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/../BaiTap3/demo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +33,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../UngDungChuyenDoiTienTe" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -46,10 +46,17 @@
       <option name="presentableId" value="Default" />
       <updated>1582729339568</updated>
       <workItem from="1582729341064" duration="266000" />
+      <workItem from="1582758165575" duration="38000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1582758201591">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582758201591" />
   </component>
 </project>
