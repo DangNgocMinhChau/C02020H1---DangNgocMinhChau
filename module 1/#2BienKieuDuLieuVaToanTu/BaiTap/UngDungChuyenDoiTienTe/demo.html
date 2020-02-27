@@ -13,7 +13,7 @@
 
  <p>From Currency  </p>
   <select >
-      <option > Viet nam </option>
+      <option id="vallue" > Viet nam </option>
       <option> USD </option>
   </select>
   <p> To Currency </p>
@@ -21,8 +21,14 @@
       <option> USD  </option>
       <option > Viet nam </option>
   </select>
-        <button type="button" onclick="Convert(); " > Convert </button>
+        <button type="button" onclick="convert(); " > Convert </button>
 
   </form>
+<script>
+    function convert() {
+        let number = document.getElementById("number");
+        alert(number.value);
+    }
+</script>
 </body>
 </html>
