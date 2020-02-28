@@ -3,32 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title> Ứng dụng chuyển đổi tiền tệ </title>
-    <script src="text.js"></script>
+
+
 </head>
-
 <body>
-  <form>
-       Amount <br>
-      <input id="number" >
+    <table> Amount </table>
+    <input id="number" type="number" />
 
- <p>From Currency  </p>
-  <select >
-      <option id="vallue" > Viet nam </option>
-      <option> USD </option>
-  </select>
-  <p> To Currency </p>
-  <select >
-      <option> USD  </option>
-      <option > Viet nam </option>
-  </select>
-        <button type="button" onclick="convert(); " > Convert </button>
+    <label>From Currency </label>
+    <select id="fromCurrency">
+        <option value="VietNam"> Viet Nam </option>
+        <option value="USD"> USD </option>
+    </select>
 
-  </form>
-<script>
-    function convert() {
-        let number = document.getElementById("number");
-        alert(number.value);
-    }
-</script>
+    <label> To Currency </label>
+    <select id="toCurrency">
+        <option value="USD"> USD </option>
+        <option value="VietNam"> Viet Nam </option>
+    </select>
+    <button onclick="show()"> Convert </button>
+    <script src="text.js"></script>
+    <p id="result"></p>
 </body>
 </html>
