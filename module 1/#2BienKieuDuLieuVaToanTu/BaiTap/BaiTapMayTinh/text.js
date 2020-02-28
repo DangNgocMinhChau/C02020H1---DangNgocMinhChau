@@ -7,14 +7,14 @@
      result.innerText =total;
  }
  function sub() {
-     total =  numberOne.value + numberTwo.value;
+     total =  numberOne.value - numberTwo.value;
      result.innerText =total;
  }
  function mul() {
-     total =  numberOne.value + numberTwo.value;
+     total =  numberOne.value * numberTwo.value;
      result.innerText =total;
  }
  function div() {
-     total =  numberOne.value + numberTwo.value;
+     total =  numberOne.value / numberTwo.value;
      result.innerText =total;
  }
