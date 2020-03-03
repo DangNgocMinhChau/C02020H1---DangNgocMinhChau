@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính chỉ số cân nặng cơ thể</title>
+
+</head>
+<body>
+       <script>
+           let inputweight;
+           let inputheight;
+           let result;
+           inputweight = prompt("mời bạn nhập cân nặng");
+           inputheight = prompt("mời bạn nhập chiều cao");
+           let weight = parseInt(inputweight);
+           let height = parseFloat(inputheight);
+           let bmi = (weight / (height * height));
+           document.write("chỉ số bmi " + bmi);
+
+         result =  (bmi <18.5) ? ('Underweight') : (bmi < 25)?
+               ('nomarl') : (bmi < 30)?
+                   ('Overweight'):(30 <= bmi)?
+                       ('obese'):("");
+           alert(result);
+       </script>
+</body>
+</html>
