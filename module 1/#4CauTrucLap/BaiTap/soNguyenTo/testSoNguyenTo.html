@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra số nguyên tố</title>
+</head>
+<body>
+        <script>
+            // var number = prompt("nhập vào số:")
+            // var count = 0;
+            //  for (var n = 2; n <=number ; n++){
+            //      if(n % 1 == 0 && n % n == 0){
+            //             count = n;
+            //      }
+            //  }document.write(count);
+
+
+           var flag = true;
+           var i = 2;
+           var n = prompt("nhập vào :")
+            var count = 0;
+           var result ="";
+
+            if(n<2){
+                flag = false;
+            }else {
+                for (i = 2 ; i < n ; i++){
+                           if(n % i == 0){
+                               flag = false;
+                               break;
+                           }
+                }
+            }
+            if(flag == true){
+                document.write( number + "là số nguyên tố")
+                count++
+            }else {
+                document.write("ko là số nguyên tố")
+            }
+
+        </script>
+</body>
+</html>

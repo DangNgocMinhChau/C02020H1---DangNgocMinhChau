@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="079139f5-a8c6-477d-beec-f079c3b8b875" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/CauLenhSwitchCase/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/CauLenhSwitchCase/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai1/convert.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai1/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai10/TinhGiaTienDien.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai10/testTinhGiaDien.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai2/convert.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai2/testConvert.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai3/area.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai3/testArea.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai4/area.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai4/testArea.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai5/dienTichTamGiac.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai5/testArea.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai6/phuongTrinhBac1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai6/testPhuongTrinh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai7/giaiPhuongTrinhBac2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai7/testPhuongTrinhBac2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai8/testOld.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai8/testYearOld.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai9/testCanhTamGiac.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/LuyenTapCauTrucDieuKien2/Bai9/testCoPhaiLaCanhTamGiac.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/MayTinhDonGian/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../#3CauTrucDieuKien/BaiTap/MayTinhDonGian/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bai1/bai1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bai2/testBai2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bai3/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bai7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../soNguyenTo/testSoNguyenTo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../suDungVongLapLapNhau/suDungVongLapLongNhau.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectId" id="1YhcToOviNNfBbv6xVHY65EQ6w5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="079139f5-a8c6-477d-beec-f079c3b8b875" name="Default Changelist" comment="" />
+      <created>1583398276598</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583398276598</updated>
+      <workItem from="1583398277855" duration="811000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="739" y="263" key="FileChooserDialogImpl" timestamp="1583401043735">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="263" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583401043735" />
+  </component>
+</project>
