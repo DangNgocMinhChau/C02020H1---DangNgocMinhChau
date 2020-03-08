@@ -6,17 +6,15 @@
 </head>
 <body>
        <script>
+           var a = prompt("nhập cạnh a:");
+           var b = prompt("nhập cạnh b :");
            var result ="";
-           for(var i = 0; i < 5;i++){
-               for(var j =0; j < 8 ; j++ ){
-                   if(i === 0 && i===4 ){
-                            result += " * "
+           for(var i = 0; i < a ;i++){
+               for(var j =0; j < b ; j++ ){
+                   if(i === 0 || i===a-1 || j===0 || j===b-1 ){
+                            result += "*";
                    }else {
-                        if(j===0 || j===7){
-                            result += " * "
-                        }else{
-                            result += "  "
-                        }
+                            result += "&nbsp&nbsp";
                    }
            }
                 result+="<br/>";
