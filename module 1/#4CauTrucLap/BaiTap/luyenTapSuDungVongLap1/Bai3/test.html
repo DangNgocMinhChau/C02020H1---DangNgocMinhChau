@@ -6,17 +6,17 @@
 </head>
 <body>
         <script>
-            var num = prompt("mời bạn nhập")
-
-                var a = 1 ; b = 0 ; temp;
-                var num = 20
-                while (num>0){
-                    temp = a;
+                var a = 0 ; b = 1 ;
+                var temp;
+                for (let i = 0 ; i < 20 ; i++){
+                    temp = a ;
                     a = a + b;
                     b = temp;
-                    num--;
+
+
+                    console.log(a)
                 }
-                    alert(b)
+
 
 
 
