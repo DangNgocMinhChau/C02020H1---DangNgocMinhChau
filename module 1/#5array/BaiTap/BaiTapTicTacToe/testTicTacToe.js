@@ -29,6 +29,7 @@ function playGame1() {
         }
 
     }
+    win();
     b.innerHTML = "<hr/>" + data;
 }
 
@@ -44,18 +45,20 @@ function playGame2() {
         }
 
     }
+    win();
     b.innerHTML = "<hr/>" + data;
 }
 
 function win() {
     for (let i = 0; i < board.length; i++) {
-        for (let j = 0; j < board.length; j++) {
+        for (let j = 0; j < board[i].length; j++) {
             if (board[i][j] !== ".") {
                 if ((board[i][j] === board[i][j + 1] && board[i][j] === board[i][j + 2])
                     || (board[i][j] === board[i + 1][j] && board[i][j] === board[i + 2][j])
                     || (board[i][j] === board[i + 1][j + 1] && board[i][j] === board[i + 2][j + 2])) {
+                    alert("win");
                     return true;
-                    alert("win")
+
                 }
             }
         }
