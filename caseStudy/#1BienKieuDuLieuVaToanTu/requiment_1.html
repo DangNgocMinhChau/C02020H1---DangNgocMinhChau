@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <script>
+
+
+            var name = prompt("nhập tên của bạn:");
+            var CMND = prompt("nhập vào số CMND của bạn:");
+            var birthDay = prompt("nhập vào ngày tháng năm sinh của bạn:");
+            var email = prompt("nhập vào email của bạn:");
+            var address = prompt("nhập vào địa chỉ của bạn:");
+            var customer = prompt("bạn thuộc loại khách hàng gì:");
+            var discount = prompt("bạn được giảm giá bao nhiêu:");
+            var amountOfPeople = prompt("số lượng người đi kèm:");
+            var numberOfDaysRented = prompt("số ngày thuê:");
+            var service = prompt("loại dịch vụ:");
+            var roomTypeRented = prompt("loại phòng thuê:");
+            var result= "";
+
+
+            var total = "";
+            if(service ==="villa" || service === "Villa"){
+                total = 500 * numberOfDaysRented * (1- discount/100);
+            }else if(service === "house" || service === "House"){
+                total = 300 * numberOfDaysRented * (1- discount/100);
+            }else if(service === "room" || service === "Room"){
+                total = 100 * numberOfDaysRented * (1- discount/100);
+            }
+
+            result = "Họ và tên :" + name + "\n" + "Số CMND:" + CMND + "\n" + "Ngày/tháng/năm sinh :" + birthDay +"\n" +
+                "Email :" + email + "\n" + "Địa chỉ của bạn là :" + address +"\n" + "Loại khách hàng của bạn là :" + customer +"\n" +
+                "Giảm giá :" + discount + "%" +"\n" + "Số người đi kèm :" + amountOfPeople + " người" +"\n" + "Số ngày thuê :" + numberOfDaysRented +" ngày" +"\n"+
+                "Loại dịch vụ :" + service +"\n" + "Loại phòng thuê :" + roomTypeRented +"\n" + "Số tiền cần thanh toán : " +  total + "$";
+
+
+
+            alert(result);
+        </script>
+</body>
+</html>

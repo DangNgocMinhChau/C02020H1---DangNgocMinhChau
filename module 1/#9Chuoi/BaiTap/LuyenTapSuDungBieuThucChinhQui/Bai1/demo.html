@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var regepDate = /^[0-9]{2}(\/)[0-9]{2}(\/)[0-9]{4}$/;
+        function testDate(str) {
+                if(regepDate.test(str)){
+                    return true;
+                }
+                return false;
+        }
+
+        var test = "15/05/1995";
+        console.log(testDate(test));
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

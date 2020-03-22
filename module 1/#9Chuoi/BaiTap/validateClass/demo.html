@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <script>
+            var regexClass = /(^[CAP]{1})([0-9]{4})([GHIKLM]{1})$/;
+            function tessClass(str) {
+                        if(regexClass.test(str)){
+                            return true
+                        }
+                        return false
+            }
+
+                    var tess = "C0318P";
+                       console.log(tessClass(tess))
+
+
+
+
+
+
+
+
+        </script>
+</body>
+</html>

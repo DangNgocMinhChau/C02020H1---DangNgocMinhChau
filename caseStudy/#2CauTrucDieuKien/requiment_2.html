@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var name = "Đặng Ngọc Minh Châu";
+    var CMND = 123456778;
+    var birthDay = "15/05/1995";
+    var email = "chaudang1595@gmail.com";
+    var address = "đà nẵng";
+    var customer = "Diamond";
+    var discount = "50";
+    var amountOfPeople = 2;
+    var numberOfDaysRented = 10;
+    var service = "Villa";
+    var roomTypeRented = "vip";
+    var menu = "";
+
+    var dataAddress = "";
+    var renDay = "";
+    var dataCustomer = "";
+    var total = "";
+
+    if (address === "Đà Nẵng" || address === "đà nẵng") {
+            dataAddress =  - 20;
+    } else if (address === "Huế" || address === "huế") {
+            dataAddress =  - 10;
+    }else if (address === "quãng nam" || address === "Quãng Nam") {
+            dataAddress = - 5;
+    }
+
+    if(numberOfDaysRented >= 7){
+            renDay = -30;
+    }else if(numberOfDaysRented>=5 && numberOfDaysRented <= 7){
+            renDay = -20;
+    }else if(numberOfDaysRented>=2 && numberOfDaysRented <= 4){
+            renDay = -10;
+    }
+
+    if (customer === "Diamond" || customer==="diamond"){
+            dataCustomer = -15;
+    }else if(customer === "platium" || customer==="Platium"){
+            dataCustomer = -10;
+    }else if(customer === "gold" || customer==="Gold"){
+        dataCustomer = -5;
+    }else if(customer === "silver" || customer==="Sliver"){
+        dataCustomer = -2;
+    }else if(customer === "member" || customer==="Member"){
+           dataCustomer = 0;
+    }
+    var total = dataCustomer + dataAddress + renDay;
+
+    if (service === "villa" || service === "Villa") {
+        total += 500 * numberOfDaysRented * (1 - discount / 100);
+    } else if (service === "house" || service === "House") {
+        total += 300 * numberOfDaysRented * (1 - discount / 100);
+    } else if (service === "room" || service === "Room") {
+        total += 100 * numberOfDaysRented * (1 - discount / 100);
+    }
+
+
+
+    menu = alert("Họ và tên :" + name + "\n" + "Số CMND:" + CMND + "\n" + "Ngày/tháng/năm sinh :" + birthDay + "\n" +
+        "Email :" + email + "\n" + "Địa chỉ của bạn là :" + address + "\n" + "Loại khách hàng của bạn là :" + customer + "\n" +
+        "Giảm giá :" + discount + "%" + "\n" + "Số người đi kèm :" + amountOfPeople + " người" + "\n" + "Số ngày thuê :" + numberOfDaysRented + " ngày" + "\n" +
+        "Loại dịch vụ :" + service + "\n" + "Loại phòng thuê :" + roomTypeRented + "\n" + "Số tiền cần thanh toán : " + total + "$");
+
+
+    switch (prompt("nhập chỉnh sửa")) {
+        case "name" :
+            name = prompt("Chỉnh sửa tên:");
+            alert("Họ và tên :" + name + "\n" + "Số CMND:" + CMND + "\n" + "Ngày/tháng/năm sinh :" + birthDay + "\n" +
+                "Email :" + email + "\n" + "Địa chỉ của bạn là :" + address + "\n" + "Loại khách hàng của bạn là :" + customer + "\n" +
+                "Giảm giá :" + discount + "%" + "\n" + "Số người đi kèm :" + amountOfPeople + " người" + "\n" + "Số ngày thuê :" + numberOfDaysRented + " ngày" + "\n" +
+                "Loại dịch vụ :" + service + "\n" + "Loại phòng thuê :" + roomTypeRented + "\n" + "Số tiền cần thanh toán : " + total + "$");
+            break;
+
+        case "CMND" :
+            CMND = prompt("chỉnh sửa CMND:");
+            alert("Họ và tên :" + name + "\n" + "Số CMND:" + CMND + "\n" + "Ngày/tháng/năm sinh :" + birthDay + "\n" +
+                "Email :" + email + "\n" + "Địa chỉ của bạn là :" + address + "\n" + "Loại khách hàng của bạn là :" + customer + "\n" +
+                "Giảm giá :" + discount + "%" + "\n" + "Số người đi kèm :" + amountOfPeople + " người" + "\n" + "Số ngày thuê :" + numberOfDaysRented + " ngày" + "\n" +
+                "Loại dịch vụ :" + service + "\n" + "Loại phòng thuê :" + roomTypeRented + "\n" + "Số tiền cần thanh toán : " + total + "$");
+            break;
+
+        case "birthDay" :
+            birthDay = prompt("Chỉnh sửa birthDay:");
+            alert("Họ và tên :" + name + "\n" + "Số CMND:" + CMND + "\n" + "Ngày/tháng/năm sinh :" + birthDay + "\n" +
+                "Email :" + email + "\n" + "Địa chỉ của bạn là :" + address + "\n" + "Loại khách hàng của bạn là :" + customer + "\n" +
+                "Giảm giá :" + discount + "%" + "\n" + "Số người đi kèm :" + amountOfPeople + " người" + "\n" + "Số ngày thuê :" + numberOfDaysRented + " ngày" + "\n" +
+                "Loại dịch vụ :" + service + "\n" + "Loại phòng thuê :" + roomTypeRented + "\n" + "Số tiền cần thanh toán : " + total + "$");
+            break;
+
+        case "email" :
+            email = prompt("Chỉnh sửa email:");
+            alert("Họ và tên :" + name + "\n" + "Số CMND:" + CMND + "\n" + "Ngày/tháng/năm sinh :" + birthDay + "\n" +
+                "Email :" + email + "\n" + "Địa chỉ của bạn là :" + address + "\n" + "Loại khách hàng của bạn là :" + customer + "\n" +
+                "Giảm giá :" + discount + "%" + "\n" + "Số người đi kèm :" + amountOfPeople + " người" + "\n" + "Số ngày thuê :" + numberOfDaysRented + " ngày" + "\n" +
+                "Loại dịch vụ :" + service + "\n" + "Loại phòng thuê :" + roomTypeRented + "\n" + "Số tiền cần thanh toán : " + total + "$");
+            break;
+
+        case "address" :
+            address = prompt("Chỉnh sửa address:");
+            alert("Họ và tên :" + name + "\n" + "Số CMND:" + CMND + "\n" + "Ngày/tháng/năm sinh :" + birthDay + "\n" +
+                "Email :" + email + "\n" + "Địa chỉ của bạn là :" + address + "\n" + "Loại khách hàng của bạn là :" + customer + "\n" +
+                "Giảm giá :" + discount + "%" + "\n" + "Số người đi kèm :" + amountOfPeople + " người" + "\n" + "Số ngày thuê :" + numberOfDaysRented + " ngày" + "\n" +
+                "Loại dịch vụ :" + service + "\n" + "Loại phòng thuê :" + roomTypeRented + "\n" + "Số tiền cần thanh toán : " + total + "$");
+            break;
+
+        case "customer" :
+            customer = prompt("Chỉnh sửa customer:");
+            alert("Họ và tên :" + name + "\n" + "Số CMND:" + CMND + "\n" + "Ngày/tháng/năm sinh :" + birthDay + "\n" +
+                "Email :" + email + "\n" + "Địa chỉ của bạn là :" + address + "\n" + "Loại khách hàng của bạn là :" + customer + "\n" +
+                "Giảm giá :" + discount + "%" + "\n" + "Số người đi kèm :" + amountOfPeople + " người" + "\n" + "Số ngày thuê :" + numberOfDaysRented + " ngày" + "\n" +
+                "Loại dịch vụ :" + service + "\n" + "Loại phòng thuê :" + roomTypeRented + "\n" + "Số tiền cần thanh toán : " + total + "$");
+            break;
+
+        case "discount" :
+            discount = prompt("Chỉnh sửa discount:");
+            alert("Họ và tên :" + name + "\n" + "Số CMND:" + CMND + "\n" + "Ngày/tháng/năm sinh :" + birthDay + "\n" +
+                "Email :" + email + "\n" + "Địa chỉ của bạn là :" + address + "\n" + "Loại khách hàng của bạn là :" + customer + "\n" +
+                "Giảm giá :" + discount + "%" + "\n" + "Số người đi kèm :" + amountOfPeople + " người" + "\n" + "Số ngày thuê :" + numberOfDaysRented + " ngày" + "\n" +
+                "Loại dịch vụ :" + service + "\n" + "Loại phòng thuê :" + roomTypeRented + "\n" + "Số tiền cần thanh toán : " + total + "$");
+            break;
+
+        case "amountOfPeople" :
+            amountOfPeople = prompt("Chỉnh sửa amountOfPeople:");
+            alert("Họ và tên :" + name + "\n" + "Số CMND:" + CMND + "\n" + "Ngày/tháng/năm sinh :" + birthDay + "\n" +
+                "Email :" + email + "\n" + "Địa chỉ của bạn là :" + address + "\n" + "Loại khách hàng của bạn là :" + customer + "\n" +
+                "Giảm giá :" + discount + "%" + "\n" + "Số người đi kèm :" + amountOfPeople + " người" + "\n" + "Số ngày thuê :" + numberOfDaysRented + " ngày" + "\n" +
+                "Loại dịch vụ :" + service + "\n" + "Loại phòng thuê :" + roomTypeRented + "\n" + "Số tiền cần thanh toán : " + total + "$");
+            break;
+
+        case "numberOfDaysRented" :
+            numberOfDaysRented = prompt("Chỉnh sửa numberOfDaysRented:");
+            alert("Họ và tên :" + name + "\n" + "Số CMND:" + CMND + "\n" + "Ngày/tháng/năm sinh :" + birthDay + "\n" +
+                "Email :" + email + "\n" + "Địa chỉ của bạn là :" + address + "\n" + "Loại khách hàng của bạn là :" + customer + "\n" +
+                "Giảm giá :" + discount + "%" + "\n" + "Số người đi kèm :" + amountOfPeople + " người" + "\n" + "Số ngày thuê :" + numberOfDaysRented + " ngày" + "\n" +
+                "Loại dịch vụ :" + service + "\n" + "Loại phòng thuê :" + roomTypeRented + "\n" + "Số tiền cần thanh toán : " + total + "$");
+            break;
+
+        case "service" :
+            service = prompt("Chỉnh sửa service:");
+            alert("Họ và tên :" + name + "\n" + "Số CMND:" + CMND + "\n" + "Ngày/tháng/năm sinh :" + birthDay + "\n" +
+                "Email :" + email + "\n" + "Địa chỉ của bạn là :" + address + "\n" + "Loại khách hàng của bạn là :" + customer + "\n" +
+                "Giảm giá :" + discount + "%" + "\n" + "Số người đi kèm :" + amountOfPeople + " người" + "\n" + "Số ngày thuê :" + numberOfDaysRented + " ngày" + "\n" +
+                "Loại dịch vụ :" + service + "\n" + "Loại phòng thuê :" + roomTypeRented + "\n" + "Số tiền cần thanh toán : " + total + "$");
+            break;
+        case "roomTypeRented" :
+            roomTypeRented = prompt("Chỉnh sửa roomTypeRented:");
+            alert("Họ và tên :" + name + "\n" + "Số CMND:" + CMND + "\n" + "Ngày/tháng/năm sinh :" + birthDay + "\n" +
+                "Email :" + email + "\n" + "Địa chỉ của bạn là :" + address + "\n" + "Loại khách hàng của bạn là :" + customer + "\n" +
+                "Giảm giá :" + discount + "%" + "\n" + "Số người đi kèm :" + amountOfPeople + " người" + "\n" + "Số ngày thuê :" + numberOfDaysRented + " ngày" + "\n" +
+                "Loại dịch vụ :" + service + "\n" + "Loại phòng thuê :" + roomTypeRented + "\n" + "Số tiền cần thanh toán : " + total + "$");
+            break;
+        default:
+            alert("mời bạn nhập lại")
+
+    }
+
+
+</script>
+</body>
+</html>

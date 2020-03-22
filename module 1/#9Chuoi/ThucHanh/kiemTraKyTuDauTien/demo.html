@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+
+    <script>
+        var regexp = /^[A-Z]/;
+        console.log(regexp);
+        
+        function isFirstLetterUpperCase(str) {
+                regexp = /^[A-Z]/;
+                if (regexp.test(str)){
+                    console.log("string's first character is uppercase");
+                }else{
+                    console.log("string first character is not uppercase");
+                }
+        }
+
+        isFirstLetterUpperCase("dbcd")
+
+
+
+    </script>
+</body>
+</html>

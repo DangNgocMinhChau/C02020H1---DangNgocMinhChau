@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var num = [];
+    for (let i = 0; i < 100; i++) {
+        num[i] = Math.floor(Math.random() * 101)
+    }
+
+    console.log(num);
+    var dem = "";
+    var number = 9;
+    var result = "";
+    for (let j = 0; j < num.length; j++)
+        if (number === num[j]) {
+            dem++;
+        }
+    console.log("sô :" + number + " xuất hiên " + dem + " lần" + " ở phần tử " + result)
+
+
+</script>
+</body>
+</html>

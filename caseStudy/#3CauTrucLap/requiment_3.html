@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+   // function isInt(num) {
+   //     var numberCheck = false;
+   //     while (numberCheck === false) {
+   //         if (parseInt(num) == num && num > 0) {
+   //             return true
+   //         }else {
+   //             num = prompt("nhập lại ")
+   //         }
+   //     }
+   //     return num
+   // }
+   // isInt(-1);
+
+
+       function idCheck(number) {
+               var idCheck = false;
+               while (idCheck === false){
+                   for (var i =0 ; i <= 9 ; i++ ){
+                           var id = number[i];
+                       if (parseInt(number) == number && number > 0) {
+                           number = prompt("nhập tiếp");
+                           return true
+
+                       }else {
+                           number = prompt("nhập lại ")
+                       }
+                   }
+               }
+               return number
+       }
+           alert(idCheck(1));
+
+   // function testEmail(email) {
+   //     let checkEmail = false;
+   //     while (checkEmail === false){
+   //         var a = email.indexOf("@");
+   //         var dot = email.lastIndexOf(".");
+   //         var space = email.indexOf(" ");
+   //         if((a != -1) && (a != 0) && (dot !=-1) && dot < (email.length -1) &&(space == -1) ) {
+   //             checkEmail = true;
+   //         } else email = prompt("địa chỉ nhập ko hợp lệ");
+   //     }
+   //     return email;
+   // }
+   // alert(testEmail("chaudang1595@gmail.com"));
+   //
+   //
+   //
+   //      function date(date) {
+   //              let checkDate  = false;
+   //              while (checkDate === false){
+   //                  var slash = date.indexOf("/");
+   //                  var space = date.indexOf(" ");
+   //
+   //                  if((slash != -1) && (slash != 0) && (space != -1) && (date.substring(0,2))){
+   //                      checkDate = true;
+   //                  }else date = prompt("nhập lại birth day:")
+   //              }
+   //              return date
+   //      }
+   //
+   //    alert(date("15/05/1995"))
+
+
+</script>
+
+</body>
+
+
+</html>

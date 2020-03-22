@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<img id="lampOff" src=lamp1.jpg height="0" width="0">
+<img id="lampOn" src=lamp2.jpg height="0" width="0">
+<canvas id="canvas" width="100" height="150"></canvas>
+<br><br>
+<button onclick="status()">On/Off</button>
+
+<script>
+    var denMo = document.getElementById("lampOn");
+    var denTat = document.getElementById("lampOff");
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    window.onload = function a() {
+        status()
+    };
+
+    class ElectricLamp {
+        constructor() {
+            this.status = false;
+            this.turnOn = function () {
+                this.status = true;
+            };
+            this.turnOff = function () {
+                this.status = false;
+            };
+        }
+    }
+
+
+    class Switch {
+        constructor() {
+            this.status = false;
+            this.connectToLamp = function (lamp) {
+                this.lamp = lamp;
+            };
+            this.switchButton = function () {
+                this.status = !this.status;
+                if (this.status) {
+                    this.lamp.turnOn()
+                } else {
+                    this.lamp.turnOff()
+                }
+            }
+        }
+    }
+
+
+    let lamp = new ElectricLamp();
+    let switchLight = new Switch();
+    switchLight.connectToLamp(lamp);
+
+    function status() {
+        switchLight.switchButton();
+        if (lamp.status == true) {
+            context.drawImage(denTat, 0, 0, 150, 100)
+        } else {
+            context.drawImage(denMo, 0, 0, 150, 100);
+        }
+
+    }
+</script>
+
+</body>
+</html>
+

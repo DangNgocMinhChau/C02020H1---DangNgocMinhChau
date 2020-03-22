@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrayNameCustomers = [];
+    displayMainMenu();
+    function displayMainMenu() {
+        let choose = prompt("1. Add new Customers" +
+            "\n2. Xóa danh sách khách hàng" +
+            "\n3. Hiên thị danh sách khách hàng" +
+            "\n4. Exit");
+        switch (choose) {
+            case "4":
+                return;
+            case "1":
+                let arrLenght = prompt("Nhap vao so luong khach hanh them: ") * 1;
+                for (let i = 0; i < arrLenght; i++) {
+                    arrayNameCustomers.push(prompt("Nhap vao ten khach hang: " + (i + 1)));
+                }
+                alert("add new complete!!!");
+                break;
+            case "2":
+                let indexDelete = prompt("Nhap vi tri muon xoa: ");
+                arrayNameCustomers.splice(indexDelete - 1, 1);
+                alert("đã xóa" ) ;
+                break;
+            case "3":
+                alert(getNameFromArray());
+                break;
+            default:
+                alert("Fail.");
+        }
+        displayMainMenu();
+    }
+    function getNameFromArray() {
+        let result = "";
+        for (let i = 0; i < arrayNameCustomers.length; i++) {
+            result += "\n" + (i + 1) + "." + arrayNameCustomers[i];
+        }
+        return result;
+    }
+</script>
+</body>
+</html>

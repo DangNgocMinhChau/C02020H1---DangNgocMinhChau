@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var regexAcount = /(^[_a-z0-9]{6,})$/;
+            function testAcount(str) {
+                    if(regexAcount.test(str)) {
+                        return true;
+                    }
+                    return false;
+            }
+                var acount = "123a";
+                    console.log(testAcount(acount))
+
+</script>
+</body>
+</html>

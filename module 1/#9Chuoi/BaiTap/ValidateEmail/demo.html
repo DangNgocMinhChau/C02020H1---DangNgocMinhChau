@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <script>
+            var emailTest = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[com]{3})$/;
+
+            function test(str) {
+                    if(emailTest.test(str)){
+                            return true;
+                    }
+                        return false;
+
+            }
+                    var email ="@gmail.com";
+                        console.log(test(email))
+
+
+
+        </script>
+</body>
+</html>

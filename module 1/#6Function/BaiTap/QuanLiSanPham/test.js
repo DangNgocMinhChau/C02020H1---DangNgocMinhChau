@@ -4,7 +4,7 @@ var data ="";
 var i = 0;
 
 function addVal(inVal) {
-        listProduct.push(inVal);
+        listProduct.push(inVal);z
         data += "<br/><br/>" +  listProduct[listProduct.length -1] + "&nbsp;&nbsp;&nbsp;&nbsp;" +  "<button onclick="+"edit"+"("+i+")" +">Edit</button>" + "<button onclick="+"del"+"("+i+")"+">Delete</button>"  ;
         document.getElementById("result").innerHTML = "";
         document.getElementById("result").innerHTML = data;
