@@ -6,16 +6,17 @@
 </head>
 <body>
 <script>
-    let arrayNamCustomer = [];
+    let arrayNamCustomer = ["chau1", "bhaudang2", "dhau3", "chaudang4"];
     displayMenuCustomer();
 
     function displayMenuCustomer() {
         let immport = prompt("1 . Thêm số lượng người đi kèm : " + "\n" +
             "2 . Xóa khách hàng : " + "\n" +
             "3 .  Hiển thị danh sách khách hàng " + " \n" +
-            "4 . Thoát ra");
+            "4 . Chỉnh sửa thông tin" + "\n" +
+            "5 . Thoát ra");
         switch (immport) {
-            case "4" :
+            case "5" :
                 alert("chương trình kết thúc");
                 return;
             case "1" :
@@ -27,17 +28,15 @@
                 console.log(arrayNamCustomer);
                 break;
             case "2":
-                let indexDelete = prompt("nhập vị trí Customer muốn xóa");
-                arrayNamCustomer.splice(indexDelete - 1, 1);
-                // alert(arrayNamCustomer);
+                deleteCustomer();
+                alert(displayArray());
                 break;
             case "3":
-
-
                 alert(displayArray());
-
-
-
+                break;
+            case "4":
+                arrayNamCustomer.splice(arrayNamCustomer.indexOf(prompt("ten muốn thay thế")), 1, prompt("Nhập lại tên"));
+                alert(displayArray());
         }
         displayMenuCustomer();
     }
@@ -48,6 +47,14 @@
             result += "\n" + (i + 1) + "." + arrayNamCustomer.sort()[i];
         }
         return result
+    }
+
+    function deleteCustomer() {
+        if (arrayNamCustomer.indexOf(prompt()) !== -1) {
+            arrayNamCustomer.splice(arrayNamCustomer.indexOf(prompt()), 1);
+        } else {
+            alert("mời bạn nhập lại:")
+        }
     }
 
 

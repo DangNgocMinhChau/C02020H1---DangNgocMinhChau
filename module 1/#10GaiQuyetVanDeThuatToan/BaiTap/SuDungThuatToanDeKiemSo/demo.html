@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let mobileArray = [
+            "0905315214",
+            "0905318214",
+            "0905312214",
+            "0905316214",
+            "0321111111",
+            "0321112111",
+            "0321113111",
+            "0321112411",
+            "0321171511",
+            "0331111111",
+            "0331112111",
+            "0331113111",
+            "0351112411",
+            "0371171511",
+        ];
+        var regexMobile = /^[0-3]{3}[0-9]{7}$/;
+        function testMobile(arr) {
+                if(regexMobile.test(arr)){
+                   return true
+                }
+                  return false
+        }
+        for(let i = 0;i<mobileArray.length ; i++){
+            var result = mobileArray[i];
+
+                    console.log(mobileArray[i] + " " + testMobile(result))
+        }
+
+
+    </script>
+</body>
+</html>
