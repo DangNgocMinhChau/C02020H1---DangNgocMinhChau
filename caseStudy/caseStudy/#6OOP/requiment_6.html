@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arrListCustomer = [];
+
+    class Customer {
+        constructor(name, idCard, birthDay, email, address, customer, discount, mountOfPeople, numberOfDaysRented, service, roomTypeRented) {
+            this.name = name;
+            this.idCard = idCard;
+            this.birthDay = birthDay;
+            this.email = email;
+            this.address = address;
+            this.customer = customer;
+            this.discount = discount;
+            this.mountOfPeople = mountOfPeople;
+            this.numberOfDaysRented = numberOfDaysRented;
+            this.service = service;
+            this.roomTypeRented = roomTypeRented;
+
+            this.setName = function () {
+                this.name = name;
+                return this.name
+            };
+            this.getName = function () {
+                return this.name
+            };
+            this.setIdCard = function () {
+                this.idCard = idCard;
+                return this.idCard
+            };
+            this.getIdCard = function () {
+                return this.idCard
+            };
+            this.setBirthDay = function () {
+                this.birthDay = birthDay;
+                return this.birthDay
+            };
+            this.getBirthDay = function () {
+                return this.birthDay
+            };
+            this.setEmail = function () {
+                this.email = email;
+                return this.email;
+            };
+            this.getEmail = function () {
+                return this.email;
+            };
+            this.setAddress = function () {
+                this.address = address;
+                return this.address;
+            };
+            this.getAddress = function () {
+                return this.address;
+            };
+            this.setCustomer = function () {
+                this.customer = customer;
+                return this.customer;
+            };
+            this.getCustomer = function () {
+                return this.customer;
+            };
+            this.setDiscount = function () {
+                this.discount = discount;
+                return this.discount;
+            };
+            this.getDiscount = function () {
+                return this.discount;
+            };
+            this.setMountOfPeople = function () {
+                this.mountOfPeople = mountOfPeople;
+                return this.mountOfPeople;
+            };
+            this.getMountOfPeople = function () {
+                return this.mountOfPeople;
+            };
+            this.setNumberOfDaysRented = function () {
+                this.numberOfDaysRented = numberOfDaysRented;
+                return this.numberOfDaysRented;
+            };
+            this.getNumberOfDaysRented = function () {
+                return this.numberOfDaysRented;
+            };
+            this.setService = function () {
+                this.service = service;
+                return this.service;
+            };
+            this.getService = function () {
+                return this.service;
+            };
+            this.setRoomTypeRented = function () {
+                this.roomTypeRented = roomTypeRented;
+                return this.roomTypeRented;
+            };
+            this.getRoomTypeRented = function () {
+                return this.roomTypeRented;
+            };
+
+
+            this.displayMainMenu = function () {
+                let selection = prompt("1. Add New Customer." + "\n" +
+                    "2. Display Information Customer. " + "\n" +
+                    "3. Edit Information Customer " + "\n" +
+                    "4. Delete Customer. " + "\n" +
+                    "5.Display Total Pay Of Customer " + "\n" +
+                    "6 . Exit");
+                switch (selection) {
+                    case "1" :
+                        this.addNewCustomer();
+
+                        break;
+
+                    case "2":
+                        this.displayCustomer();
+
+                        break;
+                    case "3":
+                        this.editCustomer();
+                        break;
+                    case "4":
+                        this.deleteCustomer();
+                        break;
+                    case "5":
+                        this.billPlease();
+                        break
+
+
+                }
+            };
+
+
+            this.addNewCustomer = function () {
+                var arrInfo = [];
+                var name = prompt("nhập tên của bạn:").trim();
+                while (name.length === 0 || name === "" || isNaN(name) !== true) {
+                    name = prompt("mời bạn nhập lại tên")
+                }
+
+                // check ID
+                function testID(str) {
+                    var regexp = /^[0-9]{9}/;
+                    if (regexp.test(str)) {
+                        return true
+                    } else {
+                        return false
+                    }
+                }
+
+                var idCard = prompt("nhập vào CMND của bạn :");
+                while (testID(idCard) === false) {
+                    idCard = prompt("mời bạn nhập lại CMND cho đùng")
+                }
+
+                // check ngày sinh
+                function testBirthDay(str) {
+                    // var regexp = /^[0-9]{2}[/][0-9]{2}[/][0-9]{4}$/;
+                    var regExp = /^[0123][0-9][/][01][0-9][/][0-9]{4}$/;
+                    if (regExp.test(str)) {
+                        return true
+                    } else {
+                        return false
+                    }
+                }
+
+                var birthDay = prompt("nhập vào ngày tháng năm sinh của bạn theo định dạng sau DD/MM/YYYY: ");
+                while (testBirthDay(birthDay) === false) {
+                    birthDay = prompt("yêu cầu nhập lại năm sinh cho đúng")
+
+                }
+
+                // check email
+
+                function testEmail(str) {
+                    var regexp = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[com]{3})$/;
+                    if (regexp.test(str)) {
+                        return true
+                    } else {
+                        return false
+                    }
+                }
+                var email = prompt("nhập vào email của bạn: xxxxxxx.@gmail.com");
+                while (testEmail(email) === false) {
+                    email = prompt("mời nhập lại")
+                }
+
+                var address = prompt("nhập vào địa chỉ của bạn:");
+                var customer = prompt("bạn thuộc loại khách hàng gì:");
+                var discount = prompt("bạn được giảm giá bao nhiêu:");
+                var amountOfPeople = prompt("số lượng người đi kèm:");
+                while (amountOfPeople * 1 < 1 || isNaN(amountOfPeople) !== false) {
+                    amountOfPeople = prompt("nhập lại số lượng người đi kèm:");
+                }
+                var numberOfDaysRented = prompt("số ngày thuê:");
+                while (numberOfDaysRented * 1 < 1 || isNaN(numberOfDaysRented) !== false) {
+                    numberOfDaysRented = prompt("xin nhập lại số ngày thuê")
+                }
+                var service = prompt("loại dịch vụ:");
+                var roomTypeRented = prompt("loại phòng thuê:");
+
+                var total = "";
+                if (service === "villa" || service === "Villa") {
+                    total = 500 * numberOfDaysRented * (1 - discount / 100);
+                } else if (service === "house" || service === "House") {
+                    total = 300 * numberOfDaysRented * (1 - discount / 100);
+                } else if (service === "room" || service === "Room") {
+                    total = 100 * numberOfDaysRented * (1 - discount / 100);
+                }
+
+
+                // add mảng 1 chiều
+                arrInfo.push(name);
+                arrInfo.push(idCard);
+                arrInfo.push(birthDay);
+                arrInfo.push(email);
+                arrInfo.push(address);
+                arrInfo.push(customer);
+                arrInfo.push(discount);
+                arrInfo.push(amountOfPeople);
+                arrInfo.push(numberOfDaysRented);
+                arrInfo.push(service);
+                arrInfo.push(roomTypeRented);
+                arrInfo.push(total);
+                // Add mảng 2 chiều
+                arrListCustomer.push(arrInfo);
+                alert("đã nhập thông tin thành công");
+
+
+                this.displayMainMenu();
+            };
+            this.billPlease = function () {
+                var arrList = "";
+                for (var i = 1; i <= arrListCustomer.length; i++) {
+                    arrList += i + ". Số tiền phải thanh toán là " + arrListCustomer[i - 1][11]
+                }
+                alert(arrList)
+            };
+
+            // hiển thị thông tin người dùng
+            this.displayCustomer = function () {
+                var arrList = "";
+                for (var i = 1; i <= arrListCustomer.length; i++) {
+                    arrList += i + ". Name " + arrListCustomer[i - 1][0] + " . CMND " + arrListCustomer[i - 1][1] + "\n"
+                }
+
+                var chooseDisplay = parseInt(prompt("nhập vào khách hàng bạn muốn coi danh sách : " + "\n" + arrList));
+                alert("1 . Tên khách hàng " + arrListCustomer[chooseDisplay - 1][0] + "\n" +
+                    "2 . Số CMND " + arrListCustomer[chooseDisplay - 1][1] + "\n" +
+                    "3 . Ngày tháng năm sinh " + arrListCustomer[chooseDisplay - 1][2] + "\n" +
+                    "4 . Email của bạn " + arrListCustomer[chooseDisplay - 1][3] + "\n" +
+                    "5 . Địa chỉ của bạn " + arrListCustomer[chooseDisplay - 1][4] + "\n" +
+                    "6 . Loại khách hàng " + arrListCustomer[chooseDisplay - 1][5] + "\n" +
+                    "7 . Giảm giá " + arrListCustomer[chooseDisplay - 1][6] + "\n" +
+                    "8 . Số lượng người đi kèm" + arrListCustomer[chooseDisplay - 1][7] + "\n" +
+                    "9 . Số ngày thuê" + arrListCustomer[chooseDisplay - 1][8] + "\n" +
+                    "10 . Loại dịch vụ" + arrListCustomer[chooseDisplay - 1][9] + "\n" +
+                    "11 . Loại phòng thuê" + arrListCustomer[chooseDisplay - 1][10] + "\n" +
+                    "12 . tổng tiền " + arrListCustomer[chooseDisplay - 1][11]);
+                alert(arrList);
+                this.displayMainMenu()
+            };
+
+            // Edit Customer
+            this.editCustomer = function () {
+                var arrList = "";
+                for (var i = 1; i <= arrListCustomer.length; i++) {
+                    arrList += i + ". Name" + arrListCustomer[i - 1][0] + ". CMND" + arrListCustomer[i - 1][1] + "\n"
+                }
+                var chooseDisplay = parseInt(prompt("nhập khách hàng bạn cần thay đổi" + "\n" + arrList));
+                var chooseEdit = parseInt(prompt("1 . Tên khách hàng " + arrListCustomer[chooseDisplay - 1][0] + "\n" +
+                    "2 . Số CMND " + arrListCustomer[chooseDisplay - 1][1] + "\n" +
+                    "3 . Ngày tháng năm sinh " + arrListCustomer[chooseDisplay - 1][2] + "\n" +
+                    "4 . Email của bạn " + arrListCustomer[chooseDisplay - 1][3] + "\n" +
+                    "5 . Địa chỉ của bạn " + arrListCustomer[chooseDisplay - 1][4] + "\n" +
+                    "6 . Loại khách hàng " + arrListCustomer[chooseDisplay - 1][5] + "\n" +
+                    "7 . Giảm giá " + arrListCustomer[chooseDisplay - 1][6] + "\n" +
+                    "8 . Số lượng người đi kèm" + arrListCustomer[chooseDisplay - 1][7] + "\n" +
+                    "9 . Số ngày thuê" + arrListCustomer[chooseDisplay - 1][8] + "\n" +
+                    "10 . Loại dịch vụ" + arrListCustomer[chooseDisplay - 1][9] + "\n" +
+                    "11 . Loại phòng thuê" + arrListCustomer[chooseDisplay - 1][10] + "\n" +
+                    "12 . Back "));
+
+
+                switch (chooseEdit) {
+                    case 1 :
+                        arrListCustomer[chooseDisplay - 1][0] = prompt("nhập vào tên khách hàng bạn muốn thay đổi");
+                        break;
+                    case 2 :
+                        arrListCustomer[chooseDisplay - 1][1] = prompt("nhập vào số CMND bạn cần thay đổi");
+                        break;
+                    case 3 :
+                        arrListCustomer[chooseDisplay - 1][2] = prompt("nhập vào ngày tháng năm sinh cần thay đổi");
+                        break;
+                    case 4 :
+                        arrListCustomer[chooseDisplay - 1][3] = prompt("nhập vào Email cần thay đổi");
+                        break;
+                    case 5 :
+                        arrListCustomer[chooseDisplay - 1][4] = prompt("nhập vào địa chỉ cần thay đổi");
+                        break;
+                    case 6 :
+                        arrListCustomer[chooseDisplay - 1][5] = prompt("nhập vào loại khách hàng cần thay đổi");
+                        break;
+                    case 7 :
+                        arrListCustomer[chooseDisplay - 1][6] = prompt("nhập lại discount");
+                        break;
+                    case 8 :
+                        arrListCustomer[chooseDisplay - 1][7] = prompt("nhập lại số người đi kèm");
+                        break;
+                    case 9 :
+                        arrListCustomer[chooseDisplay - 1][8] = prompt("nhập lại số ngày thuê");
+                        break;
+                    case 10 :
+                        arrListCustomer[chooseDisplay - 1][8] = prompt("nhập lại loại dịch vụ");
+                        break;
+                    case 11 :
+                        arrListCustomer[chooseDisplay - 1][8] = prompt("nhập lại loại phòng thuê");
+                        break;
+
+
+                }
+
+                this.displayMainMenu();
+                this.editCustomer();
+            };
+
+            // Edit Delete Customer
+            this.deleteCustomer = function () {
+                var arrList = "";
+                for (var i = 1; i <= arrListCustomer.length; i++) {
+                    arrList += i + ". Name" + arrListCustomer[i - 1][0] + ". CMND" + arrListCustomer[i - 1][1] + "\n"
+                }
+                arrListCustomer.splice(parseInt(prompt("Nhập khách hàng  bạn muốn xóa" + "\n" + arrList) - 1), 1);
+                this.displayMainMenu();
+
+            }
+        }
+
+    }
+    var customer = new Customer();
+    customer.displayMainMenu();
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
