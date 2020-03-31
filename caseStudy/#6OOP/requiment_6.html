@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    class Customer {
+        constructor(name, idCard, birthDay, email, address, customer, discount, mountOfPeople, numberOfDaysRented, service, roomTypeRented) {
+            this.name = name;
+            this.idCard = idCard;
+            this.birthDay = birthDay;
+            this.email = email;
+            this.address = address;
+            this.customer = customer;
+            this.discount = discount;
+            this.mountOfPeople = mountOfPeople;
+            this.numberOfDaysRented = numberOfDaysRented;
+            this.service = service;
+            this.roomTypeRented = roomTypeRented;
+
+            this.setName = function () {
+                this.name = name;
+                return this.name
+            };
+            this.getName = function () {
+                return this.name
+            };
+            this.setIdCard = function () {
+                this.idCard = idCard;
+                return this.idCard
+            };
+            this.getIdCard = function () {
+                return this.idCard
+            };
+            this.setBirthDay = function () {
+                this.birthDay = birthDay;
+                return this.birthDay
+            };
+            this.getBirthDay = function () {
+                return this.birthDay
+            };
+            this.setEmail = function () {
+                this.email = email;
+                return this.email;
+            };
+            this.getEmail = function () {
+                return this.email;
+            };
+            this.setAddress = function () {
+                this.address = address;
+                return this.address;
+            };
+            this.getAddress = function () {
+                return this.address;
+            };
+            this.setCustomer = function () {
+                this.customer = customer;
+                return this.customer;
+            };
+            this.getCustomer = function () {
+                return this.customer;
+            };
+            this.setDiscount = function () {
+                this.discount = discount;
+                return this.discount;
+            };
+            this.getDiscount = function () {
+                return this.discount;
+            };
+            this.setMountOfPeople = function () {
+                    this.mountOfPeople = mountOfPeople;
+                    return this.mountOfPeople;
+            };
+            this.getMountOfPeople = function () {
+                    return this.mountOfPeople;
+            };
+            this.setNumberOfDaysRented = function () {
+                    this.numberOfDaysRented = numberOfDaysRented;
+                    return this.numberOfDaysRented;
+            };
+            this.getNumberOfDaysRented = function () {
+                return this.numberOfDaysRented;
+            };
+            this.setService = function () {
+                    this.service = service;
+                    return this.service;
+            };
+            this.getService = function () {
+                return this.service;
+            };
+            this.setRoomTypeRented = function () {
+                this.roomTypeRented = roomTypeRented;
+                return this.roomTypeRented;
+            };
+            this.getRoomTypeRented = function () {
+                return this.roomTypeRented;
+            };
+
+            this.billPlease = function () {
+                if(service ==="villa" || service === "Villa"){
+                    total = 500 * numberOfDaysRented * (1- discount/100);
+                }else if(service === "house" || service === "House"){
+                    total = 300 * numberOfDaysRented * (1- discount/100);
+                }else if(service === "room" || service === "Room"){
+                    total = 100 * numberOfDaysRented * (1- discount/100);
+                }
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>
