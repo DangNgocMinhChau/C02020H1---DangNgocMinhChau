@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <script>
+
+               var x = 0;
+               var array= Array()
+
+                    for(let i = 0 ; i < 10 ; i++){
+                        let number = prompt("mời bạn nhập vào mảng");
+                           array.push(number)
+                    }
+                        console.log(array);
+
+                        let v = prompt("nhập vào số để test");
+                            if(array.indexOf(v) !== -1 ){
+                                        alert( v + " là số nằm trong mảng")
+                            }else {
+                                        alert( v + " ko là số nằm trong mảng")
+                            }
+
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai7</title>
+</head>
+<body>
+
+        <script>
+             var x = 0;
+             var array = Array ();
+
+             for (let i =0 ; i < 10 ; i++){
+                 var number = prompt("mời bạn nhập số vào mảng")
+                      array.push(number)
+             }
+
+
+                var v = prompt("mời nhập vào số để test")
+                var a = array.indexOf(v)
+                    if(a != -1 ){
+                            alert(v + " là số nằm trong mảng")
+                             array.splice(a,1);
+                    }else {
+                            alert(v + " ko là số nằm trong mảng")
+                    }
+                            console.log(array)
+
+
+
+
+
+
+        </script>
+</body>
+</html>

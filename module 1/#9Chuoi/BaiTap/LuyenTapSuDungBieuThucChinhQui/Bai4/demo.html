@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var regepPass = /^[0-9]{4}(-[0-9]{2})$/;
+
+        function testPass(str) {
+                if(regepPass.test(str)){
+                        return true;
+                }
+                return false;
+        }
+
+
+        var pass = "1233-33123";
+            console.log(testPass(pass))
+
+
+
+    </script>
+</body>
+</html>

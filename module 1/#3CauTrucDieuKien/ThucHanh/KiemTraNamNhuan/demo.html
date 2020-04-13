@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành kiểm tra năm nhuận</title>
+</head>
+<body>
+    <script>
+
+       /* let year = parseInt(prompt("Mời bạn nhập năm"));
+        if(year % 4 == 0 && year % 100 !== 0){
+            alert( "là năm nhuận");
+            if (year % 100 == 0 && year % 400 !== 0){
+                alert(year + "là năm ko nhuân");
+                if (year % 100 == 0 && year % 400 !== 0){
+                    alert(year + "là năm nhuận");
+                }else {
+                    alert(year + "là năm ko nhuân");
+                }
+            }else {
+                alert(year + "là năm nhuân");
+            }
+        }else {
+                alert( year + "là năm ko nhuận");
+        }
+        */
+
+       // thu gọn code
+
+       /* let year = parseInt(prompt("mời bạn nhập"));
+        let isLeapyear = false;
+
+        if(year % 4 == 0){
+            if(year % 100 == 0){
+                if(year % 400 == 0){
+                        isLeapyear = true;
+                }
+            }else {
+                isLeapyear = true;
+            }
+        }
+        if (isLeapyear){
+                alert(" là năm nhuận");
+
+        }else {
+            alert(" ko là năm nhuận ")
+        } */
+
+        // Tách biến
+
+       let year = parseInt(prompt("mời bạn nhập"));
+       let isLeapyear = false;
+       let isDivisibleBy4 = year % 4 == 0;
+          if(isDivisibleBy4){
+            let isDivisibleBy100 = year % 100 == 0;
+              if(isDivisibleBy100){
+                  let isDivisibleBy400 = year % 400 == 0;
+                     if(isDivisibleBy400){
+                         isLeapyear = true;
+                       }
+              }else {
+               isLeapyear = true;
+           }
+       }
+       if (isLeapyear){
+           alert(" là năm nhuận");
+
+       }else {
+           alert(" ko là năm nhuận ")
+       }
+
+    </script>
+</body>
+</html>

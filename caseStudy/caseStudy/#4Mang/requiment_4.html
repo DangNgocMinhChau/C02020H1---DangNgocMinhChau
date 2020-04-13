@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrayNamCustomer = [];
+    displayMenuCustomer();
+
+    function displayMenuCustomer() {
+        let immport = prompt("1 . Thêm số lượng người đi kèm : " + "\n" +
+            "2 . Xóa khách hàng : " + "\n" +
+            "3 .  Hiển thị danh sách khách hàng " + " \n" +
+            "4 . Thoát ra");
+        switch (immport) {
+            case "4" :
+                alert("chương trình kết thúc");
+                return;
+            case "1" :
+                let arrayLenght = prompt("nhập vào số lượng Customer muốn thêm");
+                for (let i = 1; i <= arrayLenght; i++) {
+                    arrayNamCustomer.push(prompt("tên khách hàng muốn thêm"))
+                }
+                alert("Bạn đã thêm thành công");
+                console.log(arrayNamCustomer);
+                break;
+            case "2":
+                let indexDelete = prompt("nhập vị trí Customer muốn xóa");
+                arrayNamCustomer.splice(indexDelete - 1, 1);
+                // alert(arrayNamCustomer);
+                break;
+            case "3":
+
+
+                alert(displayArray());
+
+
+
+        }
+        displayMenuCustomer();
+    }
+
+    function displayArray() {
+        let result = "";
+        for (let i = 0; i < arrayNamCustomer.length; i++) {
+            result += "\n" + (i + 1) + "." + arrayNamCustomer.sort()[i];
+        }
+        return result
+    }
+
+
+</script>
+</body>
+</html>

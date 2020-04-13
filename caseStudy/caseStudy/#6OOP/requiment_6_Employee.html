@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // Employee
+    var listEmployee = [];
+    class Employee {
+        constructor(name, idCard, birthDay, email, address) {
+            this.name = name;
+            this.idCard = idCard;
+            this.birthDay = birthDay;
+            this.email = email;
+            this.address = address;
+
+
+            this.displayMenuEmployee = function () {
+                let selectionEmployee = prompt("1. Add new Employee" + "\n" +
+                    "2. Display information Employee " + "\n" +
+                    "3. Salary of Employee" + "\n" +
+                    "4. Exit");
+                switch (selectionEmployee) {
+                    case "1" :
+                        this.addEmployee();
+                        break;
+                    case "2":
+                        this.displayEmployee();
+                        break;
+                    case "3":
+                        this.salaryEmployee();
+                        break;
+                }
+            };
+
+            // them Employee moi
+            this.addEmployee = function () {
+                var infoEmployee = [];
+                var name = prompt("nhập tên của bạn:").trim();
+                while (name.length === 0 || name === "" || isNaN(name) !== true) {
+                    name = prompt("mời bạn nhập lại tên")
+                }
+
+                // check ID
+                function testID(str) {
+                    var regexp = /^[0-9]{9}/;
+                    if (regexp.test(str)) {
+                        return true
+                    } else {
+                        return false
+                    }
+                }
+
+                var idCard = prompt("nhập vào CMND của bạn :");
+                while (testID(idCard) === false) {
+                    idCard = prompt("mời bạn nhập lại CMND cho đùng")
+                }
+
+                // check ngày sinh
+                function testBirthDay(str) {
+                    var regExp = /^[0123][0-9][/][01][0-9][/][0-9]{4}$/;
+                    if (regExp.test(str)) {
+                        return true
+                    } else {
+                        return false
+                    }
+                }
+
+                var birthDay = prompt("nhập vào ngày tháng năm sinh của bạn theo định dạng sau DD/MM/YYYY: ");
+                while (testBirthDay(birthDay) === false) {
+                    birthDay = prompt("yêu cầu nhập lại năm sinh cho đúng")
+
+                }
+
+                // check email
+
+                function testEmail(str) {
+                    var regexp = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[com]{3})$/;
+                    if (regexp.test(str)) {
+                        return true
+                    } else {
+                        return false
+                    }
+                }
+
+                var email = prompt("nhập vào email của bạn: xxxxxxx.@gmail.com");
+                while (testEmail(email) === false) {
+                    email = prompt("mời nhập lại")
+                }
+
+                var address = prompt("nhập vào địa chỉ của bạn:");
+
+                var position = prompt("Chức vụ của employ");
+
+                var salary = "";
+                if (position === "Manager") {
+                    salary = 500
+                } else if (position === "Sale") {
+                    salary = 300
+                } else if (position === "Marketing") {
+                    salary = 300;
+                }
+
+
+                infoEmployee.push(name);
+                infoEmployee.push(idCard);
+                infoEmployee.push(birthDay);
+                infoEmployee.push(email);
+                infoEmployee.push(address);
+                infoEmployee.push(position);
+                infoEmployee.push(salary);
+
+                listEmployee.push(infoEmployee);
+                alert("đã thêm thành công");
+                this.displayMenuEmployee();
+            };
+
+            // Hiển thị lương
+            this.salaryEmployee = function () {
+                var arrList ="";
+                for (let i = 1 ; i<= listEmployee.length; i++){
+                    arrList += "Lương của Employee"+listEmployee[i-1][5] +" là :" + listEmployee[i-1][6]
+                }
+                alert(arrList);
+                this.displayMenuEmployee();
+            };
+
+            // display Employee
+            this.displayEmployee = function () {
+                var arrList = "";
+                for (let i = 1; i <= listEmployee.length; i++) {
+                    arrList += i + " . " + " name : " + " " + listEmployee[i-1][0] + " " + " CMND " + listEmployee[i-1][1]
+                }
+                var choosePloyee = parseInt(prompt("nhập vào đối tượng muốn xem :" + "\n" + arrList));
+                alert("1. tên :  " + listEmployee[choosePloyee-1][0] + "\n" +
+                    "2. CMND :  " + listEmployee[choosePloyee-1][1] + "\n" +
+                    "3. Ngày sinh :  " + listEmployee[choosePloyee-1][2] + "\n" +
+                    "4. email :  " + listEmployee[choosePloyee-1][3] + "\n" +
+                    "5. address :  " + listEmployee[choosePloyee-1][4] + "\n" +
+                    "6. chức vụ :  " + listEmployee[choosePloyee-1][5] + "\n" +
+                    "7. salary :  " + listEmployee[choosePloyee-1][6] );
+
+                alert(arrList);
+                this.displayMenuEmployee();
+            }
+        }
+    }
+
+
+    let employee = new Employee();
+    employee.displayMenuEmployee()
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body onload="gamePlay()" onkeydown="moveSelection(event)">
+<canvas id="canvas" width="700"  height="700" style="background: aqua"></canvas>
+<script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+    function gamePlay() {
+        game.update();
+        game.draw(ctx);
+        game.checkCollision();
+        requestAnimationFrame(gamePlay)
+    }
+
+    function moveSelection(event) {
+        switch (event.keyCode) {
+            case 39 :
+                game.moveRightArrow();
+                break;
+            case 37 :
+                game.moveLeftArrow();
+                break;
+        }
+    }
+
+
+</script>
+
+
+<script src="test2.js"></script>
+</body>
+</html>

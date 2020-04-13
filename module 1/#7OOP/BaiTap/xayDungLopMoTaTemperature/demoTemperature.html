@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var Temperature = function (c) {
+            this.temperatureCConverF = function () {
+                    return c*1.8+30;
+            };
+            this.temperatureCConverK= function () {
+                return c + 273.15;
+            };
+
+        };
+                let temperature =new Temperature(25);
+                let cConverF = temperature.temperatureCConverF();
+                alert(cConverF);
+
+                let cConverK = temperature.temperatureCConverK();
+                alert(cConverK);
+
+
+
+
+    </script>
+</body>
+</html>

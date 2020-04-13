@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai9</title>
+</head>
+<body>
+        <script>
+
+            var arrayA = new Array(10);
+            var arrayB = new Array(10);
+            var arrayC = new Array(20);
+                for(let a = 0 ; a <= arrayA.length - 1 ; a++){
+                        var numberA = prompt("nhập số vào mảng a");
+                           arrayA[a] = numberA
+
+                }
+                        console.log(arrayA);
+            for(let b = 0 ; b <= arrayB.length - 1  ; b++){
+                var numberB = prompt("nhập số vào mảng b");
+                            arrayB[b] = numberB
+            }
+                        console.log(arrayB);
+
+                arrayC = arrayA.concat(arrayB)
+                    console.log(arrayC)
+        </script>
+</body>
+</html>
