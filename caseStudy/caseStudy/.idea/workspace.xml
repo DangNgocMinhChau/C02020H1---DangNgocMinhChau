@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa0749e5-6d61-47ba-b26b-de6f7258c31d" name="Default Changelist" comment="" />
+    <list default="true" id="fa0749e5-6d61-47ba-b26b-de6f7258c31d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/#3lopVaDoiTuong/thucHanh/xayDungLopFan/src/buildFan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/#3lopVaDoiTuong/thucHanh/xayDungLopFan/xayDungLopFan.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/#3CauTrucLap/requiment_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/#3CauTrucLap/requiment_3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +21,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="ProjectId" id="1ZFQ7MKxnVrGZNfngvVn2EkuqSx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -24,8 +34,19 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="requiment_3.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/caseStudy/#3CauTrucLap/requiment_3.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.requiment_3.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -54,6 +75,7 @@
       <workItem from="1585542275729" duration="19710000" />
       <workItem from="1585614987380" duration="4637000" />
       <workItem from="1585622242658" duration="12895000" />
+      <workItem from="1586768188803" duration="1263000" />
     </task>
     <servers />
   </component>
