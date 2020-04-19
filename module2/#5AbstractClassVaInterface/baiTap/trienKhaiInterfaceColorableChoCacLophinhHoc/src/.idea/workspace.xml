@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2fd7dbaa-f378-4a6a-a0c0-6add0a6c0765" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../trienKhaiInterfaceResizeableChoCacLopHinhHoc/src/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../trienKhaiInterfaceResizeableChoCacLopHinhHoc/src/CircleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../trienKhaiInterfaceResizeableChoCacLopHinhHoc/src/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../trienKhaiInterfaceResizeableChoCacLopHinhHoc/src/RectangleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../trienKhaiInterfaceResizeableChoCacLopHinhHoc/src/Resizeable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../trienKhaiInterfaceResizeableChoCacLopHinhHoc/src/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../trienKhaiInterfaceResizeableChoCacLopHinhHoc/src/ShapeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../trienKhaiInterfaceResizeableChoCacLopHinhHoc/src/Square.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../trienKhaiInterfaceResizeableChoCacLopHinhHoc/src/SquareTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thucHanh/lopAnimalVaInterfaceEdible/src/animal/AbstractAndInterfaceTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thucHanh/lopAnimalVaInterfaceEdible/src/animal/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thucHanh/lopAnimalVaInterfaceEdible/src/animal/ChicKen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thucHanh/lopAnimalVaInterfaceEdible/src/animal/Tiger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thucHanh/lopAnimalVaInterfaceEdible/src/edible/Edible.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thucHanh/lopAnimalVaInterfaceEdible/src/fruit/Apple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thucHanh/lopAnimalVaInterfaceEdible/src/fruit/Fruit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thucHanh/lopAnimalVaInterfaceEdible/src/fruit/Orange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thucHanh/trienKhaiInterfaceDeSoSanhCacLopHinhHoc/src/oop/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thucHanh/trienKhaiInterfaceDeSoSanhCacLopHinhHoc/src/oop/CircleComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thucHanh/trienKhaiInterfaceDeSoSanhCacLopHinhHoc/src/oop/CircleComparatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thucHanh/trienKhaiInterfaceDeSoSanhCacLopHinhHoc/src/oop/Comparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thucHanh/trienKhaiInterfaceDeSoSanhCacLopHinhHoc/src/oop/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../caseStudyModule2/FuramaResort/src/Controllers/MainControllers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../caseStudyModule2/FuramaResort/src/Modules/House.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../caseStudyModule2/FuramaResort/src/Modules/Room.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../caseStudyModule2/FuramaResort/src/Modules/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../caseStudyModule2/FuramaResort/src/Modules/Villa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../caseStudyModule2/FuramaResort/src/Modules/dichVuDiKem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../caseStudyModule2/FuramaResort/src/View/test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../caseStudyModule2/FuramaResort/src/luuFile/SerializeFileFactory.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectId" id="1alHPnAJglrvf1KlWIwvMa7DB0D" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2fd7dbaa-f378-4a6a-a0c0-6add0a6c0765" name="Default Changelist" comment="" />
+      <created>1587303238928</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587303238928</updated>
+      <workItem from="1587303240058" duration="23000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
