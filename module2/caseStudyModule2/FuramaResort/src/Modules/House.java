@@ -11,8 +11,8 @@ public class House extends Service implements Serializable {
 
     }
 
-    public House(String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue, String tieuchuanPhong, String moTaTienNghiKhac, int soTang) {
-        super(tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiToiDa, kieuThue);
+    public House(String id,String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue, String tieuchuanPhong, String moTaTienNghiKhac, int soTang) {
+        super(id,tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiToiDa, kieuThue);
         this.tieuchuanPhong = tieuchuanPhong;
         this.moTaTienNghiKhac = moTaTienNghiKhac;
         this.soTang = soTang;

@@ -13,8 +13,8 @@ public class Villa extends Service implements Serializable {
 
     }
 
-    public Villa(String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue, String tieuchuanPhong, String moTaTienNghiKhac, double dienTichHoBoi, int soTang) {
-        super(tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiToiDa, kieuThue);
+    public Villa(String id,String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue, String tieuchuanPhong, String moTaTienNghiKhac, double dienTichHoBoi, int soTang) {
+        super(id,tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiToiDa, kieuThue);
         this.tieuchuanPhong = tieuchuanPhong;
         this.moTaTienNghiKhac = moTaTienNghiKhac;
         this.dienTichHoBoi = dienTichHoBoi;

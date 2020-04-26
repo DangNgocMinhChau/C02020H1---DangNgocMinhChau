@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="130460c3-bff7-49ea-9a40-9f3635032b17" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../#5AbstractClassVaInterface/thucHanh/lopAnimalVaInterfaceEdible/src/animal/AbstractAndInterfaceTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#5AbstractClassVaInterface/thucHanh/lopAnimalVaInterfaceEdible/src/animal/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#5AbstractClassVaInterface/thucHanh/lopAnimalVaInterfaceEdible/src/animal/ChicKen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#5AbstractClassVaInterface/thucHanh/lopAnimalVaInterfaceEdible/src/animal/Tiger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#5AbstractClassVaInterface/thucHanh/lopAnimalVaInterfaceEdible/src/edible/Edible.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#5AbstractClassVaInterface/thucHanh/lopAnimalVaInterfaceEdible/src/fruit/Apple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#5AbstractClassVaInterface/thucHanh/lopAnimalVaInterfaceEdible/src/fruit/Fruit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#5AbstractClassVaInterface/thucHanh/lopAnimalVaInterfaceEdible/src/fruit/Orange.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#5AbstractClassVaInterface/thucHanh/trienKhaiInterfaceDeSoSanhCacLopHinhHoc/src/oop/Circle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#5AbstractClassVaInterface/thucHanh/trienKhaiInterfaceDeSoSanhCacLopHinhHoc/src/oop/CircleComparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#5AbstractClassVaInterface/thucHanh/trienKhaiInterfaceDeSoSanhCacLopHinhHoc/src/oop/CircleComparatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#5AbstractClassVaInterface/thucHanh/trienKhaiInterfaceDeSoSanhCacLopHinhHoc/src/oop/Comparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#5AbstractClassVaInterface/thucHanh/trienKhaiInterfaceDeSoSanhCacLopHinhHoc/src/oop/Shape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FuramaResort/src/Controllers/MainControllers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FuramaResort/src/Modules/House.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FuramaResort/src/Modules/Phong.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FuramaResort/src/Modules/Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FuramaResort/src/Modules/Villa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FuramaResort/src/Modules/dichVuDiKem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FuramaResort/src/View/test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FuramaResort/src/testThu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FuramaResort/out/production/FuramaResort/Controllers/MainControllers.class" beforeDir="false" afterPath="$PROJECT_DIR$/FuramaResort/out/production/FuramaResort/Controllers/MainControllers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FuramaResort/src/Controllers/MainControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/FuramaResort/src/Controllers/MainControllers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FuramaResort/src/View/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/FuramaResort/src/View/test.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +19,7 @@
   <component name="ProjectId" id="1aiKCuhgCCWzEJubWNJXhuB6MNr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/FuramaResort" />
@@ -62,6 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587212849883</updated>
       <workItem from="1587212850967" duration="12000" />
+      <workItem from="1587441191594" duration="7000" />
     </task>
     <servers />
   </component>
@@ -73,7 +59,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -24,6 +24,7 @@ public class Point {
         this.y = y;
     }
 
+
     public Point(float x , float y){
         this.x = x;
         this.y = y;

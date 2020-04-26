@@ -3,14 +3,15 @@ package Modules;
 import java.io.Serializable;
 
 public abstract class Service implements Serializable {
-    private String id;
+    protected String id ;
     protected String tenDichVu;
     protected double dienTichSuDung;
     protected double chiPhiThue;
     protected int soLuongNguoiToiDa;
     protected String kieuThue;
 
-    public Service(String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue) {
+    public Service(String id,String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue) {
+        this.id = id;
         this.tenDichVu = tenDichVu;
         this.dienTichSuDung = dienTichSuDung;
         this.chiPhiThue = chiPhiThue;
@@ -25,6 +26,14 @@ public abstract class Service implements Serializable {
 
     public String getTenDichVu() {
         return tenDichVu;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setTenDichVu(String tenDichVu) {
@@ -74,7 +83,8 @@ public abstract class Service implements Serializable {
 
     @Override
     public String toString() {
-        return "Tên dịch vụ là : " + this.tenDichVu + "\n"
+        return  "Mã dịch vụ : "+ this.id +"\n"+
+                "Tên dịch vụ là : " + this.tenDichVu + "\n"
                 + "Diện tích sử dụng là : " + this.dienTichSuDung + "\n" +
                 "Chi phí thuê là : " + this.chiPhiThue + "\n" +
                 "Số lượng người tối đa : " + this.soLuongNguoiToiDa + "\n" +
