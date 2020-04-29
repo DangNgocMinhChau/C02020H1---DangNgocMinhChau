@@ -3,69 +3,69 @@ package Modules;
 import java.io.Serializable;
 
 public class House extends Service implements Serializable {
-    private String tieuchuanPhong;
-    private String moTaTienNghiKhac;
-    private int soTang;
+    private String roomStandard;
+    private String comfortStandard;
+    private int numberOfFloors;
 
     public House(){
 
     }
 
-    public House(String id,String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue, String tieuchuanPhong, String moTaTienNghiKhac, int soTang) {
-        super(id,tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiToiDa, kieuThue);
-        this.tieuchuanPhong = tieuchuanPhong;
-        this.moTaTienNghiKhac = moTaTienNghiKhac;
-        this.soTang = soTang;
+    public House(String id, String serviceName, double areaUsed, double rentalCosts, int maximumNumberOfPeople, String rentalType, String roomStandard, String comfortStandard, int numberOfFloors) {
+        super(id, serviceName, areaUsed, rentalCosts, maximumNumberOfPeople, rentalType);
+        this.roomStandard = roomStandard;
+        this.comfortStandard = comfortStandard;
+        this.numberOfFloors = numberOfFloors;
     }
 
-    public House(String tieuchuanPhong, String moTaTienNghiKhac, int soTang) {
-        this.tieuchuanPhong = tieuchuanPhong;
-        this.moTaTienNghiKhac = moTaTienNghiKhac;
-        this.soTang = soTang;
+    public House(String roomStandard, String comfortStandard, int numberOfFloors) {
+        this.roomStandard = roomStandard;
+        this.comfortStandard = comfortStandard;
+        this.numberOfFloors = numberOfFloors;
     }
 
-    public String getTieuchuanPhong() {
-        return tieuchuanPhong;
+    public String getRoomStandard() {
+        return roomStandard;
     }
 
-    public void setTieuchuanPhong(String tieuchuanPhong) {
-        this.tieuchuanPhong = tieuchuanPhong;
+    public void setRoomStandard(String roomStandard) {
+        this.roomStandard = roomStandard;
     }
 
-    public String getMoTaTienNghiKhac() {
-        return moTaTienNghiKhac;
+    public String getComfortStandard() {
+        return comfortStandard;
     }
 
-    public void setMoTaTienNghiKhac(String moTaTienNghiKhac) {
-        this.moTaTienNghiKhac = moTaTienNghiKhac;
+    public void setComfortStandard(String comfortStandard) {
+        this.comfortStandard = comfortStandard;
     }
 
-    public int getSoTang() {
-        return soTang;
+    public int getNumberOfFloors() {
+        return numberOfFloors;
     }
 
-    public void setSoTang(int soTang) {
-        this.soTang = soTang;
+    public void setNumberOfFloors(int numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
     }
 
     @Override
     public void showInfor() {
         System.out.println( "Khu nghĩ dướng Furama xin kính chào quý khách : " + "\n" +
-                "Tên dịch vụ là : " + getTenDichVu() + " \n" +
-                "Diện tích sử dụng là : " + getDienTichSuDung() + "\n" +
-                "Chi phí thuê là : " + getChiPhiThue() + "\n" +
-                "Số lượng người tối đa : " + getSoLuongNguoiToiDa() + "\n" +
-                "Kiểu thuê : " + getKieuThue() + "\n" +
-                "Tiêu chuẩn phòng : " + getTieuchuanPhong() + "\n" +
-                "Mô tả tiện nghi khác : " + getMoTaTienNghiKhac() + "\n" +
-                "Số tầng : " + getSoTang() + "\n ");
+                "Tên dịch vụ là : " + getServiceName() + " \n" +
+                "Diện tích sử dụng là : " + getAreaUsed() + "\n" +
+                "Chi phí thuê là : " + getRentalCosts() + "\n" +
+                "Số lượng người tối đa : " + getMaximumNumberOfPeople() + "\n" +
+                "Kiểu thuê : " + getRentalType() + "\n" +
+                "Tiêu chuẩn phòng : " + getRoomStandard() + "\n" +
+                "Mô tả tiện nghi khác : " + getComfortStandard() + "\n" +
+                "Số tầng : " + getNumberOfFloors() + "\n ");
     }
 
     @Override
     public String toString() {
         return super.toString() + "\n"+
-                "Tiêu chuẩn phòng là : "+this.tieuchuanPhong + "\n" +
-                "Mô tả tiện nghi khác : "+this.moTaTienNghiKhac + "\n" +
-                "Số tầng " +this.soTang;
+                "Tiêu chuẩn phòng là : "+this.roomStandard + "\n" +
+                "Mô tả tiện nghi khác : "+this.comfortStandard + "\n" +
+                "Số tầng " +this.numberOfFloors;
     }
 }

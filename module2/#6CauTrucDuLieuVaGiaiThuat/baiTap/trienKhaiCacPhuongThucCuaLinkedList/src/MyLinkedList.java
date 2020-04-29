@@ -1,13 +1,13 @@
 public class MyLinkedList<E> {
     private class Node{
         private Node next;
-        private Object data;
+        private E data;
 
-        public Node(Object data){
+        public Node(E data){
             this.data = data;
         }
 
-        public Object getData(){
+        public E getData(){
             return this.data;
         }
     }
@@ -133,27 +133,27 @@ public class MyLinkedList<E> {
         }
         return -1;
     }
-    public Object get(int index){
+    public E get(int index){
         Node temp = head;
         for (int i = 0 ; i < index ; i++){
             temp = temp.next;
         }
-        return temp.data;
+        return (E) temp.data;
     }
 
 
-    public Object getFirst(){
+    public E getFirst(){
         Node temp = head;
-        return temp.data;
+        return (E) temp.data;
     }
 
-    public Object getLast(){
+    public E getLast(){
         Node temp = head;
         int j = numNodes;
        while (temp.next != null) {
             temp = temp.next;
         }
-        return temp.data;
+        return (E) temp.data;
     }
 
     public void clear(){

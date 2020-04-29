@@ -3,43 +3,43 @@ package Modules;
 import java.io.Serializable;
 
 public class Room extends Service implements Serializable {
-    private String dichVuMienPhiDiKem;
+    private String serviceFree;
 
-    public Room(){
+    public Room(String idRoom, String serviceNameRoom, double areaUsedRoom, double rentalCostsRoom, int maximumNumberOfPeopleRoom, String rentalType, String serviceFreeRoom){
 
     }
 
-    public Room(String id,String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue, String dichVuMienPhiDiKem) {
-        super(id,tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiToiDa, kieuThue);
-        this.dichVuMienPhiDiKem = dichVuMienPhiDiKem;
+    public Room(String id, String serviceName, double areaUsed, double rentalCosts, int maximumNumberOfPeople, String rentalType) {
+        super(id, serviceName, areaUsed, rentalCosts, maximumNumberOfPeople, rentalType);
+        this.serviceFree = serviceFree;
     }
 
-    public Room(String dichVuMienPhiDiKem) {
-        this.dichVuMienPhiDiKem = dichVuMienPhiDiKem;
+    public Room(String serviceFree) {
+        this.serviceFree = serviceFree;
     }
 
-    public String getDichVuMienPhiDiKem() {
-        return dichVuMienPhiDiKem;
+    public String getServiceFree() {
+        return serviceFree;
     }
 
-    public void setDichVuMienPhiDiKem(String dichVuMienPhiDiKem) {
-        this.dichVuMienPhiDiKem = dichVuMienPhiDiKem;
+    public void setServiceFree(String serviceFree) {
+        this.serviceFree = serviceFree;
     }
 
     @Override
     public void showInfor() {
         System.out.println("Khu nghĩ dướng Furama xin kính chào quý khách : " + "\n" +
-                "Tên dịch vụ là : " + getTenDichVu() + " \n" +
-                "Diện tích sử dụng là : " + getDienTichSuDung() + "\n" +
-                "Chi phí thuê là : " + getChiPhiThue() + "\n" +
-                "Số lượng người tối đa : " + getSoLuongNguoiToiDa() + "\n" +
-                "Kiểu thuê : " + getKieuThue() + "\n" +
-                "Dịch vụ miễn phí đi kèm : " + getDichVuMienPhiDiKem());
+                "Tên dịch vụ là : " + getServiceName() + " \n" +
+                "Diện tích sử dụng là : " + getAreaUsed() + "\n" +
+                "Chi phí thuê là : " + getRentalCosts() + "\n" +
+                "Số lượng người tối đa : " + getMaximumNumberOfPeople() + "\n" +
+                "Kiểu thuê : " + getRentalType() + "\n" +
+                "Dịch vụ miễn phí đi kèm : " + getServiceFree());
     }
 
     @Override
     public String toString() {
         return super.toString() + "\n"+
-                "Dịch vụ miễn phí đi kèm : " + this.dichVuMienPhiDiKem;
+                "Dịch vụ miễn phí đi kèm : " + this.serviceFree;
     }
 }

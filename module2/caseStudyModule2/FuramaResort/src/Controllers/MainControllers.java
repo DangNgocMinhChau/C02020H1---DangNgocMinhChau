@@ -1,16 +1,19 @@
 package Controllers;
 
+import Modules.Customer;
 import Modules.House;
 import Modules.Room;
 import Modules.Villa;
+import TaskCheckDuLieuDauVao.RegularExpression;
 import luuFile.SerializeFileFactory;
 
 
 import java.io.Serializable;
+import java.text.ParseException;
 import java.util.*;
 import java.util.regex.Pattern;
 
-public class MainControllers implements Serializable {
+public class MainControllers extends RegularExpression implements Serializable {
 
     public static void addNewService() {
         System.out.println("1.\tAdd New Villa\n" +
@@ -96,7 +99,7 @@ public class MainControllers implements Serializable {
         TreeSet<String> treeSetHouse = new TreeSet<>(new HashSet<>());
 
         for (House house : dsHouse) {
-            treeSetHouse.add(house.getTenDichVu());
+            treeSetHouse.add(house.getServiceName());
         }
         Iterator<String> iterator = treeSetHouse.iterator();
         System.out.println("Danh sách các dịch vụ House gồm có là : ");
@@ -111,7 +114,7 @@ public class MainControllers implements Serializable {
         TreeSet<String> treeSetRoom = new TreeSet<>(new HashSet<>());
 
         for (Room room : dsRoom) {
-            treeSetRoom.add(room.getTenDichVu());
+            treeSetRoom.add(room.getServiceName());
         }
         Iterator<String> iterator = treeSetRoom.iterator();
         System.out.println("Danh sách các dịch vụ Room gồm có là : ");
@@ -127,7 +130,7 @@ public class MainControllers implements Serializable {
         TreeSet<String> treeSetVilla = new TreeSet<>(new HashSet<>());
 
         for (Villa villa : dsVL) {
-            treeSetVilla.add(villa.getTenDichVu());
+            treeSetVilla.add(villa.getServiceName());
         }
         Iterator<String> iterator = treeSetVilla.iterator();
         System.out.println("Danh sách các dịch vụ Villa gồm có là : ");
@@ -161,7 +164,7 @@ public class MainControllers implements Serializable {
     }
 
 
-    // Phần lưu thông tin của Villa
+    // Phần lưu thông tin của Villa---------------------------------------------------------------------------------------
     Scanner sc = new Scanner(System.in);
 
     static ArrayList<Villa> dsVL = new ArrayList<Villa>();
@@ -223,47 +226,52 @@ public class MainControllers implements Serializable {
     private static void nhap() {
 
         System.out.println("Mã dịch vụ : (SVVL-YYYY  -  Trong đó : YYYY là 4 chữ số.)");
-        String id = new Scanner(System.in).nextLine();
+        String idVilla = new Scanner(System.in).nextLine();
         String test = "^S[V]{1}+V[L]{1}+[-]+[0-9]{4}$";
-        Pattern.matches(test, id);
-        while (Pattern.matches(test, id) != true) {
+        Pattern.matches(test, idVilla);
+        while (Pattern.matches(test, idVilla) != true) {
             System.out.println("Mời bạn nhập lại đúng định dạng : ");
-            id = new Scanner(System.in).nextLine();
+            idVilla = new Scanner(System.in).nextLine();
         }
 
         System.out.print("Tên dịch vụ : ");
-        String tenDichVu = new Scanner(System.in).nextLine();
-        checkTen(tenDichVu);
+        String serviceNameVilla = new Scanner(System.in).nextLine();
+        checkStandardizedName(serviceNameVilla);
 
 
         System.out.print("Diện tích sử dụng là : ");
-        double dienTichSuDung = new Scanner(System.in).nextDouble();
-        checkDienTich(dienTichSuDung);
+        double areaUsedVilla = new Scanner(System.in).nextDouble();
+        checkAreaUsedAndAreaPool(areaUsedVilla);
 
         System.out.print("Chi phí thuê là : ");
-        double cPhiThue = new Scanner(System.in).nextDouble();
-        checkChiPhiThue(cPhiThue);
+        double rentalCostsVilla = new Scanner(System.in).nextDouble();
+        checkRentalCosts(rentalCostsVilla);
 
         System.out.print("Số lượng người tối đa : ");
-        int soLuongNguoiToiDa = new Scanner(System.in).nextInt();
+        int maximumNumberOfPeopleVilla = new Scanner(System.in).nextInt();
+        checkMaximumNumberOfPeople(maximumNumberOfPeopleVilla);
 
         System.out.print("Kiểu thuê là : ");
-        String kieuThue = new Scanner(System.in).nextLine();
+        String rentalTypeVilla = new Scanner(System.in).nextLine();
+        checkStandardizedName(rentalTypeVilla);
 
         System.out.print("Tiêu chuẩn phòng là : ");
-        String tieuchuanPhong = new Scanner(System.in).nextLine();
+        String roomStandardVilla = new Scanner(System.in).nextLine();
+        checkStandardizedName(roomStandardVilla);
 
         System.out.print("Mô tả tiện nghi khác : ");
-        String moTaTienNghiKhac = new Scanner(System.in).nextLine();
+        String comfortDescriptionVilla = new Scanner(System.in).nextLine();
+
 
         System.out.print("Diện tích hồ bơi là : ");
-        double dienTichHoBoi = new Scanner(System.in).nextDouble();
-        checkDienTich(dienTichHoBoi);
+        double poolAreaVilla = new Scanner(System.in).nextDouble();
+        checkAreaUsedAndAreaPool(poolAreaVilla);
 
         System.out.print("Số tầng : ");
-        int soTang = new Scanner(System.in).nextInt();
+        int numberOfFloorsVilla = new Scanner(System.in).nextInt();
+        checkNumberOfFloors(numberOfFloorsVilla);
 
-        Villa villa = new Villa(id, tenDichVu, dienTichSuDung, cPhiThue, soLuongNguoiToiDa, kieuThue, tieuchuanPhong, moTaTienNghiKhac, dienTichHoBoi, soTang);
+        Villa villa = new Villa(idVilla, serviceNameVilla, areaUsedVilla, rentalCostsVilla, maximumNumberOfPeopleVilla, rentalTypeVilla, roomStandardVilla, comfortDescriptionVilla, poolAreaVilla, numberOfFloorsVilla);
         dsVL.add(villa);
 
     }
@@ -306,34 +314,52 @@ public class MainControllers implements Serializable {
 
 
     private static void nhapHouse() {
-        System.out.println("Mã dịch vụ : (SVXX-YYYY)");
-        String id = new Scanner(System.in).nextLine();
+        System.out.println("Mã dịch vụ : (SVHO-YYYY  -  Trong đó : YYYY là 4 chữ số.)");
+        String idHouse = new Scanner(System.in).nextLine();
+        String test = "^S[V]{1}+H[O]{1}+[-]+[0-9]{4}$";
+        Pattern.matches(test, idHouse);
+        while (Pattern.matches(test, idHouse) != true) {
+            System.out.println("Mời bạn nhập lại đúng định dạng : ");
+            idHouse = new Scanner(System.in).nextLine();
+        }
+
         System.out.print("Tên dịch vụ : ");
-        String tenDichVu = new Scanner(System.in).nextLine();
+        String serviceNameHouse = new Scanner(System.in).nextLine();
+        checkStandardizedName(serviceNameHouse);
+
         System.out.print("Diện tích sử dụng là : ");
-        double dienTichSuDung = new Scanner(System.in).nextDouble();
-        checkDienTich(dienTichSuDung);
+        double areaUsedHouse = new Scanner(System.in).nextDouble();
+        checkAreaUsedAndAreaPool(areaUsedHouse);
 
         System.out.print("Chi phí thuê là : ");
-        double cPhiThue = new Scanner(System.in).nextDouble();
-        checkChiPhiThue(cPhiThue);
+        double rentalCostsHouse = new Scanner(System.in).nextDouble();
+        checkRentalCosts(rentalCostsHouse);
 
         System.out.print("Số lượng người tối đa : ");
-        int soLuongNguoiToiDa = new Scanner(System.in).nextInt();
+        int maximumNumberOfPeopleHouse = new Scanner(System.in).nextInt();
+        checkMaximumNumberOfPeople(maximumNumberOfPeopleHouse);
+
 
         System.out.print("Kiểu thuê là : ");
-        String kieuThue = new Scanner(System.in).nextLine();
+        String rentalTypeHouse = new Scanner(System.in).nextLine();
+        checkStandardizedName(rentalTypeHouse);
+
 
         System.out.print("Tiêu chuẩn phòng là : ");
-        String tieuchuanPhong = new Scanner(System.in).nextLine();
+        String roomStandardHouse = new Scanner(System.in).nextLine();
+        checkStandardizedName(roomStandardHouse);
+
 
         System.out.print("Mô tả tiện nghi khác : ");
-        String moTaTienNghiKhac = new Scanner(System.in).nextLine();
+        String comfortStandardHouse = new Scanner(System.in).nextLine();
+
 
         System.out.print("Số tầng : ");
-        int soTang = new Scanner(System.in).nextInt();
+        int numberOfFloorsHouse = new Scanner(System.in).nextInt();
+        checkNumberOfFloors(numberOfFloorsHouse);
 
-        House house = new House(id, tenDichVu, dienTichSuDung, cPhiThue, soLuongNguoiToiDa, kieuThue, tieuchuanPhong, moTaTienNghiKhac, soTang);
+
+        House house = new House(idHouse, serviceNameHouse, areaUsedHouse, rentalCostsHouse, maximumNumberOfPeopleHouse, rentalTypeHouse, roomStandardHouse, comfortStandardHouse, numberOfFloorsHouse);
 
         dsHouse.add(house);
 
@@ -363,8 +389,6 @@ public class MainControllers implements Serializable {
 
 
     //----------------------------------------------------------------------------------------------------------------------------
-
-
     // Room
 
     static ArrayList<Room> dsRoom = new ArrayList<Room>();
@@ -411,36 +435,44 @@ public class MainControllers implements Serializable {
     }
 
     private static void nhapRoom() {
-        System.out.println("Mã dịch vụ : (SVXX-YYYY)");
-        String id = new Scanner(System.in).nextLine();
+        System.out.println("Mã dịch vụ : (SVRO-YYYY)");
+        String idRoom = new Scanner(System.in).nextLine();
+        String test = "^S[V]{1}+R[O]{1}+[-]+[0-9]{4}$";
+        Pattern.matches(test, idRoom);
+        while (Pattern.matches(test, idRoom) != true) {
+            System.out.println("Mời bạn nhập lại đúng định dạng : ");
+            idRoom = new Scanner(System.in).nextLine();
+        }
 
         System.out.print("Tên dịch vụ : ");
-        String tenDichVu = new Scanner(System.in).nextLine();
-        checkTen(tenDichVu);
+        String serviceNameRoom = new Scanner(System.in).nextLine();
+        checkStandardizedName(serviceNameRoom);
 
 
         System.out.print("Diện tích sử dụng là : ");
-        double dienTichSuDung = new Scanner(System.in).nextDouble();
-        checkDienTich(dienTichSuDung);
+        double areaUsedRoom = new Scanner(System.in).nextDouble();
+        checkAreaUsedAndAreaPool(areaUsedRoom);
 
         System.out.print("Chi phí thuê là : ");
-        double chiPhiThue = new Scanner(System.in).nextDouble();
-        checkChiPhiThue(chiPhiThue);
+        double rentalCostsRoom = new Scanner(System.in).nextDouble();
+        checkRentalCosts(rentalCostsRoom);
 
 
         System.out.print("Số lượng người tối đa : ");
-        int soLuongNguoiToiDa = new Scanner(System.in).nextInt();
-        checkSoLuongNguoiToiDa(soLuongNguoiToiDa);
+        int maximumNumberOfPeopleRoom = new Scanner(System.in).nextInt();
+        checkMaximumNumberOfPeople(maximumNumberOfPeopleRoom);
 
 
         System.out.print("Kiểu thuê là : ");
-        String kieuThue = new Scanner(System.in).nextLine();
+        String rentalTypeRoom = new Scanner(System.in).nextLine();
+        checkStandardizedName(rentalTypeRoom);
+
 
         System.out.print("Dịch vụ miễn phí đi kèm : ");
-        String dichVuMienPhiDiKem = new Scanner(System.in).nextLine();
+        String serviceFreeRoom = new Scanner(System.in).nextLine();
 
 
-        Room room = new Room(id, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiToiDa, kieuThue, dichVuMienPhiDiKem);
+        Room room = new Room(idRoom, serviceNameRoom, areaUsedRoom, rentalCostsRoom, maximumNumberOfPeopleRoom, rentalTypeRoom, serviceFreeRoom);
         dsRoom.add(room);
 
 
@@ -463,36 +495,96 @@ public class MainControllers implements Serializable {
     }
 
 
-    //---------------------------- Task 4-----------------------------------
+    //---------------------------- Task 5-----------------------------------
 
-    public static void checkTen(String tenDichVu) {
-        String checkTen = "^[A-Z].+$";
-        while (Pattern.matches(checkTen, tenDichVu) != true) {
-            System.out.println("chữ cái đầu tien phải viết hoa : ");
-            tenDichVu = new Scanner(System.in).nextLine();
+
+    public static void menuCustomer() throws ParseException {
+        System.out.println("1. Add New Customer\t" +
+                "2. Show Information Customers\t");
+        System.out.println("Nhập vào lựa chọn của bạn : ");
+        int choose = new Scanner(System.in).nextInt();
+        switch (choose){
+            case 1:
+                addNewCustomer();
+                break;
+            case 2:
+                showInfoCustomer();
+                break;
         }
     }
 
-    public static void checkDienTich(double dienTich) {
-        while (dienTich < 30) {
-            System.out.println("Diện tích phải lớn hơn 30m2");
-            dienTich = new Scanner(System.in).nextDouble();
+
+
+    static ArrayList<Customer> dsCustomer = new ArrayList<Customer>();
+    public static void addNewCustomer() throws ParseException {
+        System.out.println("Nhập họ tên Customer ");
+        String nameCustomer = new Scanner(System.in).nextLine();
+        checkName(nameCustomer);
+
+
+
+        System.out.println("Nhập ngày tháng năm sinh Customer ");
+        String birthDayCustomer = new Scanner(System.in).nextLine();
+        checkBirthday(birthDayCustomer);
+
+        System.out.println("Nhập vào giới tính của Customer ");
+        String genderCustomer = new Scanner(System.in).nextLine();
+        checkGender(genderCustomer);
+
+        System.out.println("Nhập vào ID của Customer ");
+        String idCardCustomer = new Scanner(System.in).nextLine();
+        checkIdCard(idCardCustomer);
+
+        System.out.println("Nhập vào number Phone của Customer ");
+        int phoneNumberCustomer = new Scanner(System.in).nextInt();
+
+        System.out.println("Nhập vào email của Customer ");
+        String emailCustomer = new Scanner(System.in).nextLine();
+        checkEmail(emailCustomer);
+
+
+        System.out.println("Nhập vào địa chỉ của Customer ");
+        String addressCustomer = new Scanner(System.in).nextLine();
+
+        System.out.println("Nhập vào dịch vụ của Customer ");
+        Object services = new Scanner(System.in).nextLine();
+
+
+        Customer customer = new Customer(nameCustomer, birthDayCustomer, genderCustomer, idCardCustomer,
+                phoneNumberCustomer,emailCustomer,addressCustomer,services);
+        dsCustomer.add(customer);
+        luuCustomer();
+
+    }
+    private static void xuatCustomer() {
+        for (Customer customer : dsCustomer) {
+            System.out.println(customer);
+        }
+        System.out.println("--------------------------------------------------------------");
+    }
+
+    private static void luuCustomer() {
+        boolean kq = SerializeFileFactory.luuFileCustomer(dsCustomer, "D://Hoc//hocLapTrinh//codeGym//cacModuleChuongTrinhHocCodeGym//module2//caseStudyModule2//luuFile/luuFileCustomer.csv");
+        if (kq = true) {
+            System.out.println("bạn đã lưu thành công danh sách Customer ");
+        } else {
+            System.out.println("bạn lưu chưa thành công danh sách Customer ");
         }
     }
 
-    public static void checkChiPhiThue(double chiPhi) {
-        while (chiPhi < 0) {
-            System.out.println("Chi phí thuê phải là số dương : ");
-            chiPhi = new Scanner(System.in).nextDouble();
-        }
+    private static void docCustomer() {
+        dsCustomer = SerializeFileFactory.docFileCustomer("D://Hoc//hocLapTrinh//codeGym//cacModuleChuongTrinhHocCodeGym//module2//caseStudyModule2//luuFile/luuFileCustomer.csv");
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("Đã đọc xong! \n Đây là thông tin của house \n");
     }
 
-    public static void checkSoLuongNguoiToiDa(int sl){
-            while (sl < 0 || sl >20){
-                System.out.println("Số lượng người tối đa phải >0 và < 20 người");
-                sl = new Scanner(System.in).nextInt();
-            }
+    public static void showInfoCustomer() {
+        docCustomer();
+        xuatCustomer();
     }
+
+
+
 
 }
 

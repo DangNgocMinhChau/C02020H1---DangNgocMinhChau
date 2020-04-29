@@ -46,29 +46,31 @@ public class TennisGame {
 
     private static String getString(int scorePlay1, int scorePlay2, String score) {
         int tempScore;
+        StringBuilder scoreBuilder = new StringBuilder(score);
         for (int i = 1; i < 3; i++) {
             if (i == 1) {
                 tempScore = scorePlay1;
             }
             else {
-                score += "-";
+                scoreBuilder.append("-");
                 tempScore = scorePlay2;
             }
             switch (tempScore) {
                 case 0:
-                    score += "Love";
+                   scoreBuilder.append("Love");
                     break;
                 case 1:
-                    score += "Fifteen";
+                    scoreBuilder.append("Fifteen");
                     break;
                 case 2:
-                    score += "Thirty";
+                   scoreBuilder.append("Thirty");
                     break;
                 case 3:
-                    score += "Forty";
+                    scoreBuilder.append("Forty");
                     break;
             }
         }
+        score = scoreBuilder.toString();
         return score;
     }
 }

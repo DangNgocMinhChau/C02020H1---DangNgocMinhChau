@@ -4,19 +4,19 @@ import java.io.Serializable;
 
 public abstract class Service implements Serializable {
     protected String id ;
-    protected String tenDichVu;
-    protected double dienTichSuDung;
-    protected double chiPhiThue;
-    protected int soLuongNguoiToiDa;
-    protected String kieuThue;
+    protected String serviceName;
+    protected double areaUsed;
+    protected double rentalCosts;
+    protected int maximumNumberOfPeople;
+    protected String rentalType;
 
-    public Service(String id,String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue) {
+    public Service(String id, String serviceName, double areaUsed, double rentalCosts, int maximumNumberOfPeople, String rentalType) {
         this.id = id;
-        this.tenDichVu = tenDichVu;
-        this.dienTichSuDung = dienTichSuDung;
-        this.chiPhiThue = chiPhiThue;
-        this.soLuongNguoiToiDa = soLuongNguoiToiDa;
-        this.kieuThue = kieuThue;
+        this.serviceName = serviceName;
+        this.areaUsed = areaUsed;
+        this.rentalCosts = rentalCosts;
+        this.maximumNumberOfPeople = maximumNumberOfPeople;
+        this.rentalType = rentalType;
     }
 
     public Service() {
@@ -24,8 +24,8 @@ public abstract class Service implements Serializable {
     }
 
 
-    public String getTenDichVu() {
-        return tenDichVu;
+    public String getServiceName() {
+        return serviceName;
     }
 
     public String getId() {
@@ -36,59 +36,59 @@ public abstract class Service implements Serializable {
         this.id = id;
     }
 
-    public void setTenDichVu(String tenDichVu) {
-        this.tenDichVu = tenDichVu;
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
     }
 
-    public double getDienTichSuDung() {
-        return dienTichSuDung;
+    public double getAreaUsed() {
+        return areaUsed;
     }
 
-    public void setDienTichSuDung(double dienTichSuDung) {
-        this.dienTichSuDung = dienTichSuDung;
+    public void setAreaUsed(double areaUsed) {
+        this.areaUsed = areaUsed;
     }
 
-    public double getChiPhiThue() {
-        return chiPhiThue;
+    public double getRentalCosts() {
+        return rentalCosts;
     }
 
-    public void setChiPhiThue(double chiPhiThue) {
-        this.chiPhiThue = chiPhiThue;
+    public void setRentalCosts(double rentalCosts) {
+        this.rentalCosts = rentalCosts;
     }
 
-    public int getSoLuongNguoiToiDa() {
-        return soLuongNguoiToiDa;
+    public int getMaximumNumberOfPeople() {
+        return maximumNumberOfPeople;
     }
 
-    public void setSoLuongNguoiToiDa(int soLuongNguoiToiDa) {
-        this.soLuongNguoiToiDa = soLuongNguoiToiDa;
+    public void setMaximumNumberOfPeople(int maximumNumberOfPeople) {
+        this.maximumNumberOfPeople = maximumNumberOfPeople;
     }
 
-    public String getKieuThue() {
-        return kieuThue;
+    public String getRentalType() {
+        return rentalType;
     }
 
-    public void setKieuThue(String kieuThue) {
-        this.kieuThue = kieuThue;
+    public void setRentalType(String rentalType) {
+        this.rentalType = rentalType;
     }
 
     public void showInfor1() {
         System.out.println("Khu nghĩ dướng Furama xin kính chào quý khách : " + "\n" +
-                "Tên dịch vụ là : " + getTenDichVu() + " \n" +
-                "Diện tích sử dụng là : " + getDienTichSuDung() + "\n" +
-                "Chi phí thuê là : " + getChiPhiThue() + "\n" +
-                "Số lượng người tối đa : " + getSoLuongNguoiToiDa() + "\n" +
-                "Kiểu thuê : " + getKieuThue() + "\n");
+                "Tên dịch vụ là : " + getServiceName() + " \n" +
+                "Diện tích sử dụng là : " + getAreaUsed() + "\n" +
+                "Chi phí thuê là : " + getRentalCosts() + "\n" +
+                "Số lượng người tối đa : " + getMaximumNumberOfPeople() + "\n" +
+                "Kiểu thuê : " + getRentalType() + "\n");
     }
 
     @Override
     public String toString() {
         return  "Mã dịch vụ : "+ this.id +"\n"+
-                "Tên dịch vụ là : " + this.tenDichVu + "\n"
-                + "Diện tích sử dụng là : " + this.dienTichSuDung + "\n" +
-                "Chi phí thuê là : " + this.chiPhiThue + "\n" +
-                "Số lượng người tối đa : " + this.soLuongNguoiToiDa + "\n" +
-                "Kiểu thuê : " + this.kieuThue;
+                "Tên dịch vụ là : " + this.serviceName + "\n"
+                + "Diện tích sử dụng là : " + this.areaUsed + "\n" +
+                "Chi phí thuê là : " + this.rentalCosts + "\n" +
+                "Số lượng người tối đa : " + this.maximumNumberOfPeople + "\n" +
+                "Kiểu thuê : " + this.rentalType;
     }
 
     public abstract void showInfor();

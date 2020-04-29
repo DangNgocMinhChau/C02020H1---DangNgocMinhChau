@@ -1,25 +1,27 @@
 package Modules;
 
-public class Customer {
+import java.io.Serializable;
+
+public class Customer extends Service implements Serializable {
     private String nameCustomer;
     private String birthDayCustomer;
-    private String grnderCustomer;
-    private int idCardCustomer;
+    private String genderCustomer;
+    private String idCardCustomer;
     private int phoneNumberCustomer;
     private String emailCustomer;
     private String addressCustomer;
     private Object services;
 
-    public Customer() {
+    public Customer(String customer, String nameCustomer, String name, int cardCustomer, int idCardCustomer, String emailCustomer, String addressCustomer) {
 
     }
 
     public Customer(String nameCustomer, String birthDayCustomer,
-                    String grnderCustomer, int idCardCustomer, int phoneNumberCustomer,
+                    String genderCustomer, String idCardCustomer, int phoneNumberCustomer,
                     String emailCustomer, String addressCustomer, Object services) {
         this.nameCustomer = nameCustomer;
         this.birthDayCustomer = birthDayCustomer;
-        this.grnderCustomer = grnderCustomer;
+        this.genderCustomer = genderCustomer;
         this.idCardCustomer = idCardCustomer;
         this.phoneNumberCustomer = phoneNumberCustomer;
         this.emailCustomer = emailCustomer;
@@ -43,19 +45,19 @@ public class Customer {
         this.birthDayCustomer = birthDayCustomer;
     }
 
-    public String getGrnderCustomer() {
-        return grnderCustomer;
+    public String getGenderCustomer() {
+        return genderCustomer;
     }
 
-    public void setGrnderCustomer(String grnderCustomer) {
-        this.grnderCustomer = grnderCustomer;
+    public void setGenderCustomer(String genderCustomer) {
+        this.genderCustomer = genderCustomer;
     }
 
-    public int getIdCardCustomer() {
+    public String getIdCardCustomer() {
         return idCardCustomer;
     }
 
-    public void setIdCardCustomer(int idCardCustomer) {
+    public void setIdCardCustomer(String idCardCustomer) {
         this.idCardCustomer = idCardCustomer;
     }
 
@@ -95,4 +97,17 @@ public class Customer {
 
     }
 
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "nameCustomer='" + nameCustomer + '\'' +
+                ", birthDayCustomer='" + birthDayCustomer + '\'' +
+                ", genderCustomer='" + genderCustomer + '\'' +
+                ", idCardCustomer=" + idCardCustomer +
+                ", phoneNumberCustomer=" + phoneNumberCustomer +
+                ", emailCustomer='" + emailCustomer + '\'' +
+                ", addressCustomer='" + addressCustomer + '\'' +
+                ", services=" + services +
+                '}';
+    }
 }

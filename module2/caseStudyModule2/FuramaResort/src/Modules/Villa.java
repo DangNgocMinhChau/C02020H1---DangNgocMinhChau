@@ -2,30 +2,30 @@ package Modules;
 
 import java.io.Serializable;
 
-public class Villa extends Service implements Serializable {
-    private String tieuchuanPhong;
-    private String moTaTienNghiKhac;
-    private double dienTichHoBoi;
-    private int soTang;
+public class Villa extends Service implements Serializable  {
+    private String roomStandard;
+    private String comfortDescription;
+    private double poolArea;
+    private int numberOfFloors;
 
 
     public Villa(String villa){
 
     }
 
-    public Villa(String id,String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue, String tieuchuanPhong, String moTaTienNghiKhac, double dienTichHoBoi, int soTang) {
-        super(id,tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiToiDa, kieuThue);
-        this.tieuchuanPhong = tieuchuanPhong;
-        this.moTaTienNghiKhac = moTaTienNghiKhac;
-        this.dienTichHoBoi = dienTichHoBoi;
-        this.soTang = soTang;
+    public Villa(String id, String serviceName, double areaUsed, double rentalCosts, int maximumNumberOfPeople, String rentalType, String roomStandard, String comfortDescription, double poolArea, int numberOfFloors) {
+        super(id, serviceName, areaUsed, rentalCosts, maximumNumberOfPeople, rentalType);
+        this.roomStandard = roomStandard;
+        this.comfortDescription = comfortDescription;
+        this.poolArea = poolArea;
+        this.numberOfFloors = numberOfFloors;
     }
 
-    public Villa(String tieuchuanPhong, String moTaTienNghiKhac, double dienTichHoBoi, int soTang) {
-        this.tieuchuanPhong = tieuchuanPhong;
-        this.moTaTienNghiKhac = moTaTienNghiKhac;
-        this.dienTichHoBoi = dienTichHoBoi;
-        this.soTang = soTang;
+    public Villa(String roomStandard, String comfortDescription, double poolArea, int numberOfFloors) {
+        this.roomStandard = roomStandard;
+        this.comfortDescription = comfortDescription;
+        this.poolArea = poolArea;
+        this.numberOfFloors = numberOfFloors;
     }
 
     public Villa() {
@@ -33,58 +33,58 @@ public class Villa extends Service implements Serializable {
     }
 
 
-    public String getTieuchuanPhong() {
-        return tieuchuanPhong;
+    public String getRoomStandard() {
+        return roomStandard;
     }
 
-    public void setTieuchuanPhong(String tieuchuanPhong) {
-        this.tieuchuanPhong = tieuchuanPhong;
+    public void setRoomStandard(String roomStandard) {
+        this.roomStandard = roomStandard;
     }
 
-    public String getMoTaTienNghiKhac() {
-        return moTaTienNghiKhac;
+    public String getComfortDescription() {
+        return comfortDescription;
     }
 
-    public void setMoTaTienNghiKhac(String moTaTienNghiKhac) {
-        this.moTaTienNghiKhac = moTaTienNghiKhac;
+    public void setComfortDescription(String comfortDescription) {
+        this.comfortDescription = comfortDescription;
     }
 
-    public double getDienTichHoBoi() {
-        return dienTichHoBoi;
+    public double getPoolArea() {
+        return poolArea;
     }
 
-    public void setDienTichHoBoi(double dienTichHoBoi) {
-        this.dienTichHoBoi = dienTichHoBoi;
+    public void setPoolArea(double poolArea) {
+        this.poolArea = poolArea;
     }
 
-    public int getSoTang() {
-        return soTang;
+    public int getNumberOfFloors() {
+        return numberOfFloors;
     }
 
-    public void setSoTang(int soTang) {
-        this.soTang = soTang;
+    public void setNumberOfFloors(int numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
     }
 
     @Override
     public void showInfor() {
         System.out.println( "Khu nghĩ dướng Furama xin kính chào quý khách : " + "\n" +
-                "Tên dịch vụ là : " + getTenDichVu() + " \n" +
-                "Diện tích sử dụng là : " + getDienTichSuDung() + "\n" +
-                "Chi phí thuê là : " + getChiPhiThue() + "\n" +
-                "Số lượng người tối đa : " + getSoLuongNguoiToiDa() + "\n" +
-                "Kiểu thuê : " + getKieuThue() + "\n" +
-                "Tiêu chuẩn phòng : " + getTieuchuanPhong() + "\n" +
-                "Mô tả tiện nghi khác : " + getMoTaTienNghiKhac() + "\n" +
-                "Diện tích hồ bơi : " + getDienTichHoBoi() + "\n" +
-                "Số tầng : " + getSoTang() + "\n");
+                "Tên dịch vụ là : " + getServiceName() + " \n" +
+                "Diện tích sử dụng là : " + getAreaUsed() + "\n" +
+                "Chi phí thuê là : " + getRentalCosts() + "\n" +
+                "Số lượng người tối đa : " + getMaximumNumberOfPeople() + "\n" +
+                "Kiểu thuê : " + getRentalType() + "\n" +
+                "Tiêu chuẩn phòng : " + getRoomStandard() + "\n" +
+                "Mô tả tiện nghi khác : " + getComfortDescription() + "\n" +
+                "Diện tích hồ bơi : " + getPoolArea() + "\n" +
+                "Số tầng : " + getNumberOfFloors() + "\n");
     }
 
     @Override
     public String toString() {
         return super.toString() + "\n"+
-                "Tiêu chuẩn phòng là : "+this.tieuchuanPhong + "\n" +
-                "Mô tả tiện nghi khác : "+this.moTaTienNghiKhac + "\n" +
-                "Diện tích hồ bơi : "+this.dienTichHoBoi + "\n" +
-                "Số tầng " +this.soTang;
+                "Tiêu chuẩn phòng là : "+this.roomStandard + "\n" +
+                "Mô tả tiện nghi khác : "+this.comfortDescription + "\n" +
+                "Diện tích hồ bơi : "+this.poolArea + "\n" +
+                "Số tầng " +this.numberOfFloors;
     }
 }

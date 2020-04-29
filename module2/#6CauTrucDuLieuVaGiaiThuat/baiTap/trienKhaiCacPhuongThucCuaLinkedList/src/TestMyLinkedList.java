@@ -51,15 +51,14 @@ public class TestMyLinkedList {
 
 
          for (int i = 0 ; i < list.numNodes ; i++){
-            SinhVien sv = (SinhVien) list.get(i);
-             System.out.println(sv.getName());
+//            SinhVien sv = (SinhVien) list.get(i);
+             System.out.println(list.get(i).getName());
          }
 
 //            SinhVien sv = (SinhVien) list.getFirst();
 //            System.out.println(sv.getName());
 
-        SinhVien sv = (SinhVien) list.getLast();
-        System.out.println(sv.getName());
+        System.out.println(list.getLast().getName());
 
     }
 
