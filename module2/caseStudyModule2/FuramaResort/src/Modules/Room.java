@@ -38,6 +38,16 @@ public class Room extends Service implements Serializable {
     }
 
     @Override
+    public int compare(Customer o1, Customer o2) {
+        return 0;
+    }
+
+    @Override
+    public boolean equals() {
+        return false;
+    }
+
+    @Override
     public String toString() {
         return super.toString() + "\n"+
                 "Dịch vụ miễn phí đi kèm : " + this.serviceFree;

@@ -93,4 +93,7 @@ public abstract class Service implements Serializable {
 
     public abstract void showInfor();
 
+    public abstract int compare(Customer o1, Customer o2);
+
+    public abstract boolean equals();
 }

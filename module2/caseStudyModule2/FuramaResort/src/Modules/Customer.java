@@ -1,35 +1,51 @@
 package Modules;
 
 import java.io.Serializable;
+import java.util.Comparator;
 
-public class Customer extends Service implements Serializable {
+ public class Customer extends Service implements Serializable, Comparable<Customer>, Comparator<Customer> {
+
     private String nameCustomer;
-    private String birthDayCustomer;
+    public String birthDayCustomer;
     private String genderCustomer;
     private String idCardCustomer;
     private int phoneNumberCustomer;
     private String emailCustomer;
+    private String speciesCustomer;
     private String addressCustomer;
     private Object services;
 
-    public Customer(String customer, String nameCustomer, String name, int cardCustomer, int idCardCustomer, String emailCustomer, String addressCustomer) {
+    public Customer(String nameCustomer, int birthDayCustomer, String genderCustomer, String idCardCustomer, int phoneNumberCustomer, String emailCustomer, String addressCustomer, String customer, Object services) {
 
     }
+    public Customer(String birthDayCustomer) {
+            this.birthDayCustomer = birthDayCustomer;
+    }
 
-    public Customer(String nameCustomer, String birthDayCustomer,
+    public Customer( String nameCustomer, String birthDayCustomer,
                     String genderCustomer, String idCardCustomer, int phoneNumberCustomer,
-                    String emailCustomer, String addressCustomer, Object services) {
+                    String emailCustomer,String speciesCustomer, String addressCustomer, Object services) {
+
         this.nameCustomer = nameCustomer;
         this.birthDayCustomer = birthDayCustomer;
         this.genderCustomer = genderCustomer;
         this.idCardCustomer = idCardCustomer;
         this.phoneNumberCustomer = phoneNumberCustomer;
         this.emailCustomer = emailCustomer;
+        this.speciesCustomer = speciesCustomer;
         this.addressCustomer = addressCustomer;
         this.services = services;
     }
 
-    public String getNameCustomer() {
+    public Customer(String nameCustomer, String birthDayCustomer, String genderCustomer, String idCardCustomer, int phoneNumberCustomer, String emailCustomer, String addressCustomer, String customer) {
+
+    }
+
+     public Customer() {
+
+     }
+
+     public String getNameCustomer() {
         return nameCustomer;
     }
 
@@ -93,21 +109,49 @@ public class Customer extends Service implements Serializable {
         this.services = services;
     }
 
+    public String getSpeciesCustomer() {
+        return speciesCustomer;
+    }
+
+    public void setSpeciesCustomer(String speciesCustomer) {
+        this.speciesCustomer = speciesCustomer;
+    }
+
     public void showInfor(){
 
     }
 
+
     @Override
     public String toString() {
-        return "Customer{" +
-                "nameCustomer='" + nameCustomer + '\'' +
-                ", birthDayCustomer='" + birthDayCustomer + '\'' +
-                ", genderCustomer='" + genderCustomer + '\'' +
-                ", idCardCustomer=" + idCardCustomer +
-                ", phoneNumberCustomer=" + phoneNumberCustomer +
-                ", emailCustomer='" + emailCustomer + '\'' +
-                ", addressCustomer='" + addressCustomer + '\'' +
-                ", services=" + services +
-                '}';
+        return "Tên Khách hàng : " + nameCustomer + "\n" +
+                "Ngày sinh  : " + birthDayCustomer + "\n" +
+                "Giới tính : " + genderCustomer + "\n" +
+                "Số CMND : "  + idCardCustomer + "\n" +
+                "Số ĐTDĐ   : " + phoneNumberCustomer + "\n"+
+                "Email : " + emailCustomer + "\n" +
+                "Loại  : " + speciesCustomer + "\n" +
+                "Địa chỉ : "  + addressCustomer + "\n" +
+                "--------------------------------"+ "\n"+
+                "Dịch vụ thuê là :  "+"\n" + services + "\n"+
+                "--------------------------------"+"\n";
     }
+
+    @Override
+    public int compareTo(Customer o) {
+        return 0;
+    }
+
+
+    @Override
+    public int compare(Customer o1, Customer o2) {
+        return o1.nameCustomer.compareTo(o2.nameCustomer);
+    }
+
+    @Override
+    public boolean equals() {
+        return false;
+    }
+
+
 }

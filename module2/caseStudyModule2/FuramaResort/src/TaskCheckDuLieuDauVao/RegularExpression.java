@@ -114,7 +114,7 @@ public class RegularExpression {
         return false;
     }
 
-    private static int getYearNs(Calendar cal, SimpleDateFormat sdf) throws ParseException {
+    public static int getYearNs(Calendar cal, SimpleDateFormat sdf) throws ParseException {
         String test;
         Date birthday;
         int yearNs;
