@@ -873,38 +873,39 @@ public class MainControllers extends RegularExpression implements Serializable {
         Queue<String> customersMovie = new LinkedList<>();
         docCustomer();
         xuatCustomer();
-//        System.out.println("Số lượng vé xem phim trong hôm nay là : ");
-//        int movieTickets = new Scanner(System.in).nextInt();
-        int count1 = 1;
-        while (true) {
-            if (count1 <= 2) {
-                System.out.println("nhập vào vi trí khách hàng muốn mua vé ");
-                int selection = new Scanner(System.in).nextInt();
-                customersMovie.offer(dsCustomer.get(selection - 1).getNameCustomer());
+        System.out.println("Số lượng vé xem phim trong hôm nay là : ");
+        int movieTickets = new Scanner(System.in).nextInt();
+        int numberOfBuy = 1;
+        while (numberOfBuy <= movieTickets) {
+            System.out.println("nhập vào vi trí khách hàng muốn mua vé ");
+            int selection = new Scanner(System.in).nextInt();
+            customersMovie.offer(dsCustomer.get(selection - 1).getNameCustomer());
 
-                System.out.println("bạn có muốn thêm nữa ko : (c/k) ?");
-                String check = new Scanner(System.in).nextLine();
-                if (check.equalsIgnoreCase("k")) {
+            System.out.println("Còn customer nào mua nữa ko : (c/k) ?");
+            String check = new Scanner(System.in).nextLine();
+            if (check.equalsIgnoreCase("k")) {
+                break;
+
+            } else {
+                if (numberOfBuy == movieTickets) {
+                    System.out.println("đã bán hết vé !");
+                    int count = 1;
+                    while (true) {
+                        String name = customersMovie.poll();
+                        if (name == null) {
+                            break;
+                        }
+                        System.out.println(count + " : " + name);
+                        count++;
+                    }
                     break;
+
+                } else {
+                    numberOfBuy++;
                 }
 
             }
-
-//           System.out.println("Đã hết vé");
         }
-        count1++;
-
-        int count = 1;
-        while (true) {
-            String name = customersMovie.poll();
-            if (name == null) {
-                break;
-            }
-            System.out.println(count + " : " + name);
-            count++;
-        }
-
-
     }
 }
 
