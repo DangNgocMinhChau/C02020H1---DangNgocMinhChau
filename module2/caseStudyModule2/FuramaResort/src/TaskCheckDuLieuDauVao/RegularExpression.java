@@ -146,6 +146,32 @@ public class RegularExpression {
         }
     }
 
+    public static void checkLevelEmployee(String level){
+        String regex = "(Trung cấp)*(Cao đẳng)*(Đại học)*(Sau đại học)*$";
+        Pattern.matches(regex, level);
+        while ( Pattern.matches(regex, level) != true){
+            System.out.println("Mời nhập lai cho đúng yêu cầu :");
+            level =  new Scanner(System.in).nextLine();
+        }
+
+    }
+
+    public static void checkLocationEmployee(String location){
+        String regex = "(Lễ tân)*(Phục vụ)*(Chuyên viên)*(Giám sát)*(Quản lý)*(Giám đốc)*$";
+        while (Pattern.matches(regex, location) != true){
+            System.out.println("Mời nhập lại vị trí Employee cho đúng yêu cầu : ");
+            location = new Scanner(System.in).nextLine();
+        }
+    }
+
+    public static void checkNumberPhone(String numberPhone){
+        String regex = "^[0-9]{10}$";
+        while (Pattern.matches(regex, numberPhone) != true){
+            System.out.println("Số điện thoại phải đủ 10 số : ");
+            numberPhone = new Scanner(System.in).nextLine();
+        }
+    }
+
 }
 
 

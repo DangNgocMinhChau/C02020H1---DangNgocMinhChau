@@ -3,13 +3,13 @@ package Modules;
 import java.io.Serializable;
 import java.util.Comparator;
 
- public class Customer extends Service implements Serializable, Comparable<Customer>, Comparator<Customer> {
+public class Customer extends Service implements Serializable, Comparable<Customer>, Comparator<Customer>,Movie4D {
 
     private String nameCustomer;
     public String birthDayCustomer;
     private String genderCustomer;
     private String idCardCustomer;
-    private int phoneNumberCustomer;
+    private String phoneNumberCustomer;
     private String emailCustomer;
     private String speciesCustomer;
     private String addressCustomer;
@@ -18,13 +18,14 @@ import java.util.Comparator;
     public Customer(String nameCustomer, int birthDayCustomer, String genderCustomer, String idCardCustomer, int phoneNumberCustomer, String emailCustomer, String addressCustomer, String customer, Object services) {
 
     }
+
     public Customer(String birthDayCustomer) {
-            this.birthDayCustomer = birthDayCustomer;
+        this.birthDayCustomer = birthDayCustomer;
     }
 
-    public Customer( String nameCustomer, String birthDayCustomer,
-                    String genderCustomer, String idCardCustomer, int phoneNumberCustomer,
-                    String emailCustomer,String speciesCustomer, String addressCustomer, Object services) {
+    public Customer(String nameCustomer, String birthDayCustomer,
+                    String genderCustomer, String idCardCustomer, String phoneNumberCustomer,
+                    String emailCustomer, String speciesCustomer, String addressCustomer, Object services) {
 
         this.nameCustomer = nameCustomer;
         this.birthDayCustomer = birthDayCustomer;
@@ -41,11 +42,11 @@ import java.util.Comparator;
 
     }
 
-     public Customer() {
+    public Customer() {
 
-     }
+    }
 
-     public String getNameCustomer() {
+    public String getNameCustomer() {
         return nameCustomer;
     }
 
@@ -77,11 +78,11 @@ import java.util.Comparator;
         this.idCardCustomer = idCardCustomer;
     }
 
-    public int getPhoneNumberCustomer() {
+    public String getPhoneNumberCustomer() {
         return phoneNumberCustomer;
     }
 
-    public void setPhoneNumberCustomer(int phoneNumberCustomer) {
+    public void setPhoneNumberCustomer(String phoneNumberCustomer) {
         this.phoneNumberCustomer = phoneNumberCustomer;
     }
 
@@ -117,7 +118,7 @@ import java.util.Comparator;
         this.speciesCustomer = speciesCustomer;
     }
 
-    public void showInfor(){
+    public void showInfor() {
 
     }
 
@@ -127,14 +128,18 @@ import java.util.Comparator;
         return "Tên Khách hàng : " + nameCustomer + "\n" +
                 "Ngày sinh  : " + birthDayCustomer + "\n" +
                 "Giới tính : " + genderCustomer + "\n" +
-                "Số CMND : "  + idCardCustomer + "\n" +
-                "Số ĐTDĐ   : " + phoneNumberCustomer + "\n"+
+                "Số CMND : " + idCardCustomer + "\n" +
+                "Số ĐTDĐ   : " + phoneNumberCustomer + "\n" +
                 "Email : " + emailCustomer + "\n" +
                 "Loại  : " + speciesCustomer + "\n" +
-                "Địa chỉ : "  + addressCustomer + "\n" +
-                "--------------------------------"+ "\n"+
-                "Dịch vụ thuê là :  "+"\n" + services + "\n"+
-                "--------------------------------"+"\n";
+                "Địa chỉ : " + addressCustomer + "\n" +
+                "---------------Dịch vụ---------------" + "\n" + services + "\n" +
+                "---------------~~~~~~~~--------------" + "\n";
+    }
+
+    @Override
+    public String muaVe() {
+        return " Đã mua vé ";
     }
 
     @Override

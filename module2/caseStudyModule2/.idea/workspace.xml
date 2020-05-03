@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="130460c3-bff7-49ea-9a40-9f3635032b17" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FuramaResort/src/testThu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FuramaResort/out/production/FuramaResort/Controllers/MainControllers.class" beforeDir="false" afterPath="$PROJECT_DIR$/FuramaResort/out/production/FuramaResort/Controllers/MainControllers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FuramaResort/src/Controllers/MainControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/FuramaResort/src/Controllers/MainControllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FuramaResort/src/View/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/FuramaResort/src/View/test.java" afterDir="false" />
-    </list>
+    <list default="true" id="130460c3-bff7-49ea-9a40-9f3635032b17" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +9,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
   <component name="ProjectId" id="1aiKCuhgCCWzEJubWNJXhuB6MNr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -48,6 +43,7 @@
       <updated>1587212849883</updated>
       <workItem from="1587212850967" duration="12000" />
       <workItem from="1587441191594" duration="7000" />
+      <workItem from="1588314859007" duration="12000" />
     </task>
     <servers />
   </component>

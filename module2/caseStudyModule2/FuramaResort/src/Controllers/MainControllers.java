@@ -1,5 +1,6 @@
 package Controllers;
 
+import Emloyee.Employee;
 import Modules.Customer;
 import Modules.House;
 import Modules.Room;
@@ -7,6 +8,8 @@ import Modules.Villa;
 import TaskCheckDuLieuDauVao.RegularExpression;
 import luuFile.SerializeFileFactory;
 
+import java.util.HashMap;
+import java.util.Map;
 
 import java.io.Serializable;
 import java.text.ParseException;
@@ -21,7 +24,7 @@ public class MainControllers extends RegularExpression implements Serializable {
                 "3. Add New Customer" + "\n" +
                 "4. Show Information of Customer " + "\n" +
                 "5. Add New Booking" + "\n" +
-                "6. Show Information of Employee" + "\n" +
+                "6. Employee" + "\n" +
                 "7. Exit" + "\n");
         System.out.println("mời bạn nhập vào lựa chọn");
         int choose = new Scanner(System.in).nextInt();
@@ -39,13 +42,49 @@ public class MainControllers extends RegularExpression implements Serializable {
             case 4:
                 showInfoCustomer();
                 break;
-            case 5 :
+            case 5:
                 addNewBook();
+                break;
+            case 6:
+                menuEmployee();
                 break;
         }
     }
 
+    //-----------------Employee----------------------
+    public static void menuEmployee() throws ParseException {
+        System.out.println("1. Add Employee " + "\n" +
+                "2. Show Infor Employee" + "\n" +
+                "3. Add Map Employee " + "\n" +
+                "4. Show Map Employee " + "\n" +
+                "5. Back " + "\n" +
+                "6. Exit");
+        int choose = new Scanner(System.in).nextInt();
+        switch (choose) {
+            case 1:
+                addEmployee();
+                menuEmployee();
+                break;
+            case 2:
+                showInforEmployee();
+                break;
+            case 3:
+                addMapEmployee();
+                menuEmployee();
+                break;
+            case 4:
+                showMapEmployee();
+                break;
+            case 5:
+                displayMainMennu();
+                break;
+            case 6:
+                System.err.println("Cảm ơn bạn đã xử dụng");
+                System.exit(0);
+        }
+    }
 
+    //------------------------------------------------
     public static void addNewService() throws ParseException {
         System.out.println("1.\tAdd New Villa\n" +
                 "2.\tAdd New House\n" +
@@ -175,7 +214,6 @@ public class MainControllers extends RegularExpression implements Serializable {
     // displayMain
 
 
-
     // Phần lưu thông tin của Villa---------------------------------------------------------------------------------------
     Scanner sc = new Scanner(System.in);
 
@@ -231,7 +269,7 @@ public class MainControllers extends RegularExpression implements Serializable {
     private static void xuatVL() {
         int count = 1;
         for (Villa vl : dsVL) {
-            System.out.println("Villa "+ count +" : " + "\n" + vl);
+            System.out.println("Villa " + count + " : " + "\n" + vl);
             count++;
             System.out.println("---------------------------------------------------------------------");
         }
@@ -443,9 +481,10 @@ public class MainControllers extends RegularExpression implements Serializable {
 
 
     private static void xuatRoom() {
-        System.out.println("Đã đọc xong! \n Đây là thông tin của Room \n");
+        int count = 1;
         for (Room room : dsRoom) {
-            System.out.println(room);
+            System.out.println("Room " + count + " : " + "\n" + room);
+            count++;
         }
         System.out.println("----------------------------------------------------");
     }
@@ -530,7 +569,7 @@ public class MainControllers extends RegularExpression implements Serializable {
     }
 
 
-    static ArrayList<Customer> dsCustomer = new ArrayList<Customer>();
+    public static ArrayList<Customer> dsCustomer = new ArrayList<Customer>();
 
 
     public static void addNewCustomer() throws ParseException {
@@ -552,7 +591,8 @@ public class MainControllers extends RegularExpression implements Serializable {
         checkIdCard(idCardCustomer);
 
         System.out.println("Nhập vào number Phone của Customer ");
-        int phoneNumberCustomer = new Scanner(System.in).nextInt();
+        String phoneNumberCustomer = new Scanner(System.in).nextLine();
+        checkNumberPhone(phoneNumberCustomer);
 
         System.out.println("Nhập vào email của Customer ");
         String emailCustomer = new Scanner(System.in).nextLine();
@@ -564,12 +604,11 @@ public class MainControllers extends RegularExpression implements Serializable {
         System.out.println("Nhập vào địa chỉ của Customer ");
         String addressCustomer = new Scanner(System.in).nextLine();
 
-        System.out.println("Nhập vào dịch vụ của Customer ");
-        Object services = new Scanner(System.in).nextLine();
+        Object services = "Chưa cập nhật";
 
 
-        dsCustomer.add(new Customer( nameCustomer, birthDayCustomer, genderCustomer, idCardCustomer,
-                phoneNumberCustomer, emailCustomer, speciesCustomer, addressCustomer,services));
+        dsCustomer.add(new Customer(nameCustomer, birthDayCustomer, genderCustomer, idCardCustomer,
+                phoneNumberCustomer, emailCustomer, speciesCustomer, addressCustomer, services));
 
         Collections.sort(dsCustomer);
         luuCustomer();
@@ -583,7 +622,8 @@ public class MainControllers extends RegularExpression implements Serializable {
         int count = 1;
         for (Customer st : dsCustomer) {
 
-            System.out.println(count + " . "  + st.getNameCustomer() + " " + st.getBirthDayCustomer());
+            System.out.println(count + " . " + st.getNameCustomer() + " " + st.getBirthDayCustomer());
+//            System.out.println(st);
             count++;
         }
 
@@ -628,15 +668,17 @@ public class MainControllers extends RegularExpression implements Serializable {
             System.out.println("bạn lưu chưa thành công danh sách CustomerBooking ");
         }
     }
+
     private static void docCustomerBooking() {
         dsCustomer = SerializeFileFactory.docFileCustomer("D://Hoc//hocLapTrinh//codeGym//cacModuleChuongTrinhHocCodeGym//module2//caseStudyModule2//luuFile/luuFileCustomerBooking.csv");
         System.out.println("--------------------------------------------------------------");
         System.out.println("Đã đọc xong! \n Đây là thông tin của Customer \n");
     }
-    private static void xuatCustomerBooking(){
-            for (Customer customer : dsCustomer){
-                System.out.println(customer);
-            }
+
+    private static void xuatCustomerBooking() {
+        for (Customer customer : dsCustomer) {
+            System.out.println(customer);
+        }
     }
 
     public static void showInfoCustomerBooking() {
@@ -644,6 +686,7 @@ public class MainControllers extends RegularExpression implements Serializable {
         xuatCustomerBooking();
 
     }
+
     private static void them() {
         System.out.println("Lựa chọn khách hàng : ");
         int code = new Scanner(System.in).nextInt();
@@ -659,23 +702,213 @@ public class MainControllers extends RegularExpression implements Serializable {
                 xuatVL();
                 System.out.println("Chọn Villa muốn thuê : ");
                 int selection = new Scanner(System.in).nextInt();
-                for (Villa villa : dsVL){
-                     dsVL.get(selection - 1 );
-                     dsCustomer.get(code - 1 ).setServices(dsVL.get(selection - 1 ));
-                    System.out.println(dsCustomer.get(code-1));
+                for (Villa villa : dsVL) {
+                    dsVL.get(selection - 1);
+                    dsCustomer.get(code - 1).setServices(dsVL.get(selection - 1));
+                    System.out.println(dsCustomer.get(code - 1));
                     luuCustomerBooking();
                 }
                 break;
 
             case 2:
-                System.out.println("thông tin sau lưu : ");
-                showInfoCustomerBooking();
+                docHouse();
+                xuatHouse();
+                System.out.println("Chọn House muốn thuê : ");
+                int selectionHouse = new Scanner(System.in).nextInt();
+                for (House house : dsHouse) {
+                    dsHouse.get(selectionHouse - 1);
+                    dsCustomer.get(code - 1).setServices(dsHouse.get(selectionHouse - 1));
+                    System.out.println(dsCustomer.get(code - 1));
+                    luuCustomerBooking();
+                }
+                break;
+
+            case 3:
+                docRoom();
+                xuatRoom();
+                System.out.println("Chọn Room muốn thuê : ");
+                int selectionRoom = new Scanner(System.in).nextInt();
+                for (Room room : dsRoom) {
+                    dsRoom.get(selectionRoom - 1);
+                    dsCustomer.get(code - 1).setServices(dsRoom.get(selectionRoom - 1));
+                    System.out.println(dsCustomer.get(code - 1));
+                    luuCustomerBooking();
+                }
                 break;
         }
 
     }
 
+    //---------------------------------Task 9 ----------------------------------------------
+
+
+    static ArrayList<Employee> dsEmployee = new ArrayList<Employee>();
+
+    public static void addEmployee() {
+
+        System.out.println("Nhập vào tên Employee : ");
+        String nameEmployee = new Scanner(System.in).nextLine();
+        checkName(nameEmployee);
+
+        System.out.println("Nhập nắm sinh của Employee : ");
+        String birthdayEmployee = new Scanner(System.in).nextLine();
+        checkBirthday(birthdayEmployee);
+
+        System.out.println("Nhập vào số CMND của Employee : ");
+        String idCardEmployee = new Scanner(System.in).nextLine();
+        checkIdCard(idCardEmployee);
+
+        System.out.println("Nhập vào số ĐT của Employee : ");
+        String numberPhoneEmployee = new Scanner(System.in).nextLine();
+        checkNumberPhone(numberPhoneEmployee);
+
+
+        System.out.println("Nhập vào email của Employee : ");
+        String emailEmployee = new Scanner(System.in).nextLine();
+        checkEmail(emailEmployee);
+
+        System.out.println("Mời bạn nhập vào trình độ của Employee và chữ cái đầu tiên phải viết hoa " + "\n" +
+                "Trình độ bao gồm : [Trung cấp , Cao đẳng , Đại học , Sau đại học]");
+        String levelEmployee = new Scanner(System.in).nextLine();
+        checkLevelEmployee(levelEmployee);
+
+        System.out.println("Nhập vào vị trí của Emloyee và chữ cái đầu tiên phải viết hoa " + "\n" +
+                "Vị trí bao gồm : [Lễ tân , Phục vụ , Chuyên viên , Giám sát , Quản lý , Giám đốc]");
+        String locationEmployee = new Scanner(System.in).nextLine();
+        checkLocationEmployee(locationEmployee);
+
+
+        System.out.println("Lương của Emloyee : ");
+        String salaryEmployee = new Scanner(System.in).nextLine();
+
+        dsEmployee.add(new Employee(nameEmployee, birthdayEmployee, idCardEmployee,
+                numberPhoneEmployee, emailEmployee, levelEmployee, locationEmployee, salaryEmployee));
+        luuEmployee();
+    }
+
+    private static void luuEmployee() {
+        boolean kq = SerializeFileFactory.luuFileEmployee(dsEmployee, "D://Hoc//hocLapTrinh//codeGym//cacModuleChuongTrinhHocCodeGym//module2//caseStudyModule2//luuFile/luuFileEmployee.csv");
+        if (kq = true) {
+            System.out.println("bạn đã lưu thành công danh sách Employee ");
+        } else {
+            System.out.println("bạn lưu chưa thành công danh sách Employee ");
+        }
+    }
+
+    private static void docEmployee() {
+        dsEmployee = SerializeFileFactory.docFileEmployee("D://Hoc//hocLapTrinh//codeGym//cacModuleChuongTrinhHocCodeGym//module2//caseStudyModule2//luuFile/luuFileEmployee.csv");
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("Đã đọc xong! \n Đây là thông tin của Employee \n");
+    }
+
+    private static void xuatEmployee() {
+        int count = 1;
+        for (Employee employee : dsEmployee) {
+            System.out.println("Employee " + count + " : " + "\n" + employee);
+            count++;
+        }
+    }
+
+    public static void showInforEmployee() {
+        docEmployee();
+        xuatEmployee();
+    }
+
+    public static void addMapEmployee() {
+        System.out.println("Nhập Employ để nhập mã : ");
+        int chooseEmployee = new Scanner(System.in).nextInt();
+
+        System.out.println("Nhập vào mã Employee : ");
+        int codeEmployee = new Scanner(System.in).nextInt();
+
+        Map<Integer, Object> mapEmployee = new HashMap<Integer, Object>();
+        int e = 0;
+        for (Employee employee : dsEmployee) {
+            e = employee.setCodeEmployee(codeEmployee);
+        }
+
+        dsEmployee.add((Employee) mapEmployee.put(e, dsEmployee.get(chooseEmployee - 1)));
+
+        Set<Integer> set = mapEmployee.keySet();
+        for (Integer key : set) {
+            System.out.println(mapEmployee.get(key));
+        }
+        luuMapEmployee();
+
+    }
+
+    private static void luuMapEmployee() {
+        boolean kq = SerializeFileFactory.luuFileEmployee(dsEmployee, "D://Hoc//hocLapTrinh//codeGym//cacModuleChuongTrinhHocCodeGym//module2//caseStudyModule2//luuFile/luuFileMapEmployee.csv");
+        if (kq = true) {
+            System.out.println("bạn đã lưu thành công danh sách Employee ");
+        } else {
+            System.out.println("bạn lưu chưa thành công danh sách Employee ");
+        }
+    }
+
+    private static void docMapEmployee() {
+        dsEmployee = SerializeFileFactory.docFileEmployee("D://Hoc//hocLapTrinh//codeGym//cacModuleChuongTrinhHocCodeGym//module2//caseStudyModule2//luuFile/luuFileMapEmployee.csv");
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("Đã đọc xong! \n Đây là thông tin của Employee \n");
+    }
+
+    private static void xuatMapEmployee() {
+        int count = 1;
+        for (Employee employee : dsEmployee) {
+            System.out.println("Employee " + count + " : " + "\n" + employee);
+            count++;
+        }
+    }
+
+    public static void showMapEmployee() {
+        docMapEmployee();
+        xuatMapEmployee();
+    }
+
+
+    //-----------------------------Task 10 ----------------------------------
+
+
+    public static void customerMovie() {
+        Queue<String> customersMovie = new LinkedList<>();
+        docCustomer();
+        xuatCustomer();
+//        System.out.println("Số lượng vé xem phim trong hôm nay là : ");
+//        int movieTickets = new Scanner(System.in).nextInt();
+        int count1 = 1;
+        while (true) {
+            if (count1 <= 2) {
+                System.out.println("nhập vào vi trí khách hàng muốn mua vé ");
+                int selection = new Scanner(System.in).nextInt();
+                customersMovie.offer(dsCustomer.get(selection - 1).getNameCustomer());
+
+                System.out.println("bạn có muốn thêm nữa ko : (c/k) ?");
+                String check = new Scanner(System.in).nextLine();
+                if (check.equalsIgnoreCase("k")) {
+                    break;
+                }
+
+            }
+
+//           System.out.println("Đã hết vé");
+        }
+        count1++;
+
+        int count = 1;
+        while (true) {
+            String name = customersMovie.poll();
+            if (name == null) {
+                break;
+            }
+            System.out.println(count + " : " + name);
+            count++;
+        }
+
+
+    }
 }
+
+
 
 
 

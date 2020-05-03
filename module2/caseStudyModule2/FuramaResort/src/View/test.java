@@ -13,10 +13,12 @@ public class test {
     public static void main(String[] args) throws ParseException {
 
         MainControllers abc = new MainControllers();
-            while (true){
-//            abc.addNewBook();
-                abc.displayMainMennu();
-            }
+//            while (true)
+//            abc.displayMainMennu();
+        abc.customerMovie();
+
+
+
 
 
 
