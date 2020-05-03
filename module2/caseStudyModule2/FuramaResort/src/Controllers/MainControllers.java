@@ -742,7 +742,7 @@ public class MainControllers extends RegularExpression implements Serializable {
     //---------------------------------Task 9 ----------------------------------------------
 
 
-    static ArrayList<Employee> dsEmployee = new ArrayList<Employee>();
+   public static ArrayList<Employee> dsEmployee = new ArrayList<Employee>();
 
     public static void addEmployee() {
 
@@ -907,6 +907,22 @@ public class MainControllers extends RegularExpression implements Serializable {
             }
         }
     }
+
+
+    //--------------------------------task 12 -------------------------------------
+
+    public static void fileEmployee() throws ParseException  {
+        Stack<Employee> stackEmployee = new Stack<>();
+        for (int i = 0 ; i <= dsEmployee.size()  ; i++){
+            stackEmployee.push(dsEmployee.get(0));
+        }
+        Iterator<Employee> iterator = stackEmployee.iterator();
+        while (iterator.hasNext()) {
+            Employee val = iterator.next();
+            System.out.println(val);
+        }
+    }
+
 }
 
 

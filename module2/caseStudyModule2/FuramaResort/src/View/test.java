@@ -13,9 +13,8 @@ public class test {
     public static void main(String[] args) throws ParseException {
 
         MainControllers abc = new MainControllers();
-//            while (true)
-//            abc.displayMainMennu();
-        abc.customerMovie();
+
+        abc.fileEmployee();
 
 
 
