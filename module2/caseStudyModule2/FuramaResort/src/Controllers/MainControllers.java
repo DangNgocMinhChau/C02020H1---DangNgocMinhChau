@@ -15,6 +15,8 @@ import java.io.Serializable;
 import java.text.ParseException;
 import java.util.*;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class MainControllers extends RegularExpression implements Serializable {
     public static void displayMainMennu() throws ParseException {
@@ -23,101 +25,126 @@ public class MainControllers extends RegularExpression implements Serializable {
                 "2. Show Services " + "\n" +
                 "3. Add New Customer" + "\n" +
                 "4. Show Information of Customer " + "\n" +
-                "5. Add New Booking" + "\n" +
-                "6. Employee" + "\n" +
-                "7. Exit" + "\n");
+                "5. Nơi mua vé xem phim " + "\n" +
+                "6. Add New Booking" + "\n" +
+                "7. Employee" + "\n" +
+                "8. Tủ hồ sơ " + "\n" +
+                "9. Exit" + "\n");
         System.out.println("mời bạn nhập vào lựa chọn");
-        int choose = new Scanner(System.in).nextInt();
+        String choose = new Scanner(System.in).nextLine();
 
         switch (choose) {
-            case 1:
+            case "1":
                 addNewService();
                 break;
-            case 2:
+            case "2":
                 showService();
                 break;
-            case 3:
+            case "3":
                 addNewCustomer();
                 break;
-            case 4:
+            case "4":
                 showInfoCustomer();
                 break;
-            case 5:
+            case "5":
+                customerMovie();
+                break;
+            case "6":
                 addNewBook();
                 break;
-            case 6:
+            case "7":
                 menuEmployee();
                 break;
+            case "8":
+                fileEmployee();
+                break;
+            case "9":
+                System.err.println("Cảm ơn bạn đã sử dụng");
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Mời bạn nhập cho đúng ! Enter để nhập lại :");
+                String enter = new Scanner(System.in).nextLine();
+                displayMainMennu();
         }
     }
 
     //-----------------Employee----------------------
-    public static void menuEmployee() throws ParseException {
+    private static void menuEmployee() throws ParseException {
         System.out.println("1. Add Employee " + "\n" +
                 "2. Show Infor Employee" + "\n" +
                 "3. Add Map Employee " + "\n" +
                 "4. Show Map Employee " + "\n" +
                 "5. Back " + "\n" +
                 "6. Exit");
-        int choose = new Scanner(System.in).nextInt();
+        String choose = new Scanner(System.in).nextLine();
         switch (choose) {
-            case 1:
+            case "1":
                 addEmployee();
                 menuEmployee();
                 break;
-            case 2:
+            case "2":
                 showInforEmployee();
                 break;
-            case 3:
+            case "3":
                 addMapEmployee();
                 menuEmployee();
                 break;
-            case 4:
+            case "4":
                 showMapEmployee();
                 break;
-            case 5:
+            case "5":
                 displayMainMennu();
                 break;
-            case 6:
-                System.err.println("Cảm ơn bạn đã xử dụng");
+            case "6":
+                System.err.println("Cảm ơn bạn đã sử dụng");
                 System.exit(0);
+                break;
+            default:
+                System.out.println("Bạn chọn sai ! Enter để quay lại ");
+                String enter = new Scanner(System.in).nextLine();
+                menuEmployee();
         }
     }
 
     //------------------------------------------------
-    public static void addNewService() throws ParseException {
+    private static void addNewService() throws ParseException {
         System.out.println("1.\tAdd New Villa\n" +
                 "2.\tAdd New House\n" +
                 "3.\tAdd New Room\n" +
                 "4.\tBack to menu\n" +
                 "5.\tExit\n");
         System.out.println("mời bạn lựa chọn dịch vụ theo mong muốn : ");
-        int choose = new Scanner(System.in).nextInt();
+        String choose = new Scanner(System.in).nextLine();
         switch (choose) {
-            case 1:
+            case "1":
                 System.out.println("---------------------------------------------");
                 menuVilla();
                 break;
-            case 2:
+            case "2":
                 System.out.println("---------------------------------------------");
                 menuHouse();
                 break;
-            case 3:
+            case "3":
                 System.out.println("---------------------------------------------");
                 menuRoom();
                 break;
-            case 4:
+            case "4":
                 displayMainMennu();
                 break;
-            case 5:
+            case "5":
                 System.err.println("Bạn đã kết thúc chương trình ! Hẹn gặp lại");
                 System.exit(0);
                 break;
+            default:
+                System.out.println("Lựa chọn không đúng! Enter để quay lại: ");
+                String enter = new Scanner(System.in).nextLine();
+                addNewService();
         }
     }
 
     //-------------------------------------------------------------------------------------------------------------------
-    public static void showService() throws ParseException {
+    private static void showService() throws ParseException {
         System.out.println("1.\tShow all Villa\n" +
                 "2.\tShow all House\n" +
                 "3.\tShow all Room\n" +
@@ -127,40 +154,43 @@ public class MainControllers extends RegularExpression implements Serializable {
                 "7.\tBack to menu\n" +
                 "8.\tExit\n");
         System.out.println("mời bạn chọn thông tin muốn hiển thị :");
-        int c = new Scanner(System.in).nextInt();
-        switch (c) {
-            case 1:
+        String choose = new Scanner(System.in).nextLine();
+        switch (choose) {
+            case "1":
                 System.out.println("Danh sách Villa");
                 docVL();
                 xuatVL();
                 break;
-            case 2:
+            case "2":
                 System.out.println("Danh sách House");
                 docHouse();
                 xuatHouse();
                 break;
-            case 3:
+            case "3":
                 System.out.println("Danh sách Room");
                 docRoom();
                 xuatRoom();
                 break;
-            case 4:
+            case "4":
                 showAllNameVillaNotDuplicate();
                 break;
-            case 5:
+            case "5":
                 showAllNameHouseNotDuplicate();
                 break;
-            case 6:
+            case "6":
                 showAllNameRoomNotDuplicate();
                 break;
-            case 7:
+            case "7":
                 displayMainMennu();
                 break;
-            case 8:
+            case "8":
                 System.err.println("Bạn đã thoát ra ! Hẹn gặp lại ");
                 System.exit(0);
                 break;
-
+            default:
+                System.out.println("Bạn đã chọn sai ! Enter để quay lại ");
+                String enter = new Scanner(System.in).nextLine();
+                showService();
         }
     }
 
@@ -215,36 +245,40 @@ public class MainControllers extends RegularExpression implements Serializable {
 
 
     // Phần lưu thông tin của Villa---------------------------------------------------------------------------------------
-    Scanner sc = new Scanner(System.in);
 
-    static ArrayList<Villa> dsVL = new ArrayList<Villa>();
+    private static ArrayList<Villa> dsVL = new ArrayList<Villa>();
 
-    public static void menuVilla() throws ParseException {
+    private static void menuVilla() throws ParseException {
         System.out.println("1.Nhập Villa");
         System.out.println("2.Lưu Villa");
         System.out.println("3.Quay lại");
         System.out.println("4.Thoát");
         System.out.println("Bạn muốn làm gì ?");
-        int l = new Scanner(System.in).nextInt();
+        String choose = new Scanner(System.in).nextLine();
 
-        switch (l) {
-            case 1:
+        switch (choose) {
+            case "1":
                 nhapVL();
                 menuVilla();
                 System.out.println("---------------------------------------------");
                 break;
-            case 2:
+            case "2":
                 luuVL();
                 System.out.println("---------------------------------------------");
                 break;
-            case 3:
+            case "3":
                 addNewService();
                 System.out.println("---------------------------------------------");
                 break;
-            case 4:
+            case "4":
                 System.err.println("Bạn đã thoát khỏi Villa !");
                 System.exit(0);
                 System.out.println("---------------------------------------------");
+                break;
+            default:
+                System.out.println("Nhập sai lựa chọn ! Enter để quay lại : ");
+                String enter = new Scanner(System.in).nextLine();
+                menuVilla();
         }
     }
 
@@ -258,7 +292,7 @@ public class MainControllers extends RegularExpression implements Serializable {
     private static void luuVL() {
 
         boolean kq = SerializeFileFactory.luuFile(dsVL, "D://Hoc//hocLapTrinh//codeGym//cacModuleChuongTrinhHocCodeGym//module2//caseStudyModule2//luuFile/luuFileVilla.csv");
-        if (kq = true) {
+        if (!kq) {
             System.out.println("đã lưu file thành công danh sách Villa");
         } else {
             System.out.println("lưu chưa thành công danh sách Villa");
@@ -280,8 +314,7 @@ public class MainControllers extends RegularExpression implements Serializable {
         System.out.println("Mã dịch vụ : (SVVL-YYYY  -  Trong đó : YYYY là 4 chữ số.)");
         String idVilla = new Scanner(System.in).nextLine();
         String test = "^S[V]{1}+V[L]{1}+[-]+[0-9]{4}$";
-        Pattern.matches(test, idVilla);
-        while (Pattern.matches(test, idVilla) != true) {
+        while (!Pattern.matches(test, idVilla)) {
             System.out.println("Mời bạn nhập lại đúng định dạng : ");
             idVilla = new Scanner(System.in).nextLine();
         }
@@ -292,11 +325,12 @@ public class MainControllers extends RegularExpression implements Serializable {
 
 
         System.out.print("Diện tích sử dụng là : ");
-        double areaUsedVilla = new Scanner(System.in).nextDouble();
-        checkAreaUsedAndAreaPool(areaUsedVilla);
+        double areaUsedVilla = supportCheck();
+        while (areaUsedVilla < 30) areaUsedVilla = supportCheck();
+
 
         System.out.print("Chi phí thuê là : ");
-        double rentalCostsVilla = new Scanner(System.in).nextDouble();
+        double rentalCostsVilla = supportCheck();
         checkRentalCosts(rentalCostsVilla);
 
         System.out.print("Số lượng người tối đa : ");
@@ -316,7 +350,7 @@ public class MainControllers extends RegularExpression implements Serializable {
 
 
         System.out.print("Diện tích hồ bơi là : ");
-        double poolAreaVilla = new Scanner(System.in).nextDouble();
+        double poolAreaVilla = supportCheck();
         checkAreaUsedAndAreaPool(poolAreaVilla);
 
         System.out.print("Số tầng : ");
@@ -332,35 +366,39 @@ public class MainControllers extends RegularExpression implements Serializable {
 
     // Phần lưu thông tin của House
 
-    static ArrayList<House> dsHouse = new ArrayList<House>();
+    private static ArrayList<House> dsHouse = new ArrayList<House>();
 
-    public static void menuHouse() throws ParseException {
+    private static void menuHouse() throws ParseException {
         System.out.println("1.Nhập vào House");
         System.out.println("2.Lưu file House");
         System.out.println("3.Quay lại");
         System.out.println("4.Thoát ");
         System.out.println("Bạn muốn làm gì ? ");
-        int h = new Scanner(System.in).nextInt();
+        String choose = new Scanner(System.in).nextLine();
 
-        switch (h) {
-            case 1:
+        switch (choose) {
+            case "1":
                 nhapHouse();
                 System.out.println("-------------------------------------------------");
                 menuHouse();
                 break;
-            case 2:
+            case "2":
                 luuHouse();
                 System.out.println("-------------------------------------------------");
                 break;
-            case 3:
+            case "3":
                 addNewService();
                 System.out.println("---------------------------------------------");
                 break;
-            case 4:
+            case "4":
                 System.err.println("Bạn đã thoát khỏi House !");
                 System.exit(0);
                 System.out.println("-------------------------------------------------");
                 break;
+            default:
+                System.out.println("lựa chọn sai ! Enter để quay lại ");
+                String enter = new Scanner(System.in).nextLine();
+                menuHouse();
         }
     }
 
@@ -369,8 +407,8 @@ public class MainControllers extends RegularExpression implements Serializable {
         System.out.println("Mã dịch vụ : (SVHO-YYYY  -  Trong đó : YYYY là 4 chữ số.)");
         String idHouse = new Scanner(System.in).nextLine();
         String test = "^S[V]{1}+H[O]{1}+[-]+[0-9]{4}$";
-        Pattern.matches(test, idHouse);
-        while (Pattern.matches(test, idHouse) != true) {
+//        Pattern.matches(test, idHouse);
+        while (!Pattern.matches(test, idHouse)) {
             System.out.println("Mời bạn nhập lại đúng định dạng : ");
             idHouse = new Scanner(System.in).nextLine();
         }
@@ -380,11 +418,14 @@ public class MainControllers extends RegularExpression implements Serializable {
         checkStandardizedName(serviceNameHouse);
 
         System.out.print("Diện tích sử dụng là : ");
-        double areaUsedHouse = new Scanner(System.in).nextDouble();
-        checkAreaUsedAndAreaPool(areaUsedHouse);
+        double areaUsedHouse = supportCheck();
+        System.out.println(areaUsedHouse);
+        while (areaUsedHouse < 30) {
+            areaUsedHouse = supportCheck();
+        }
 
         System.out.print("Chi phí thuê là : ");
-        double rentalCostsHouse = new Scanner(System.in).nextDouble();
+        double rentalCostsHouse = supportCheck();
         checkRentalCosts(rentalCostsHouse);
 
         System.out.print("Số lượng người tối đa : ");
@@ -428,7 +469,7 @@ public class MainControllers extends RegularExpression implements Serializable {
 
     private static void luuHouse() {
         boolean kq = SerializeFileFactory.luuFileHouse(dsHouse, "D://Hoc//hocLapTrinh//codeGym//cacModuleChuongTrinhHocCodeGym//module2//caseStudyModule2//luuFile/luuFileHouse.csv");
-        if (kq = true) {
+        if (!kq) {
             System.out.println("bạn đã lưu thành công danh sách House ");
         } else {
             System.out.println("bạn lưu chưa thành công danh sách House ");
@@ -445,7 +486,7 @@ public class MainControllers extends RegularExpression implements Serializable {
     //----------------------------------------------------------------------------------------------------------------------------
     // Room
 
-    static ArrayList<Room> dsRoom = new ArrayList<Room>();
+    private static ArrayList<Room> dsRoom = new ArrayList<Room>();
     static int count = 1;
 
     public static void menuRoom() throws ParseException {
@@ -454,28 +495,32 @@ public class MainControllers extends RegularExpression implements Serializable {
         System.out.println("3.Quay lại");
         System.out.println("4.Thoát ");
         System.out.println("Bạn muốn làm gì ? ");
-        int h = new Scanner(System.in).nextInt();
+        String choose = new Scanner(System.in).nextLine();
 
-        switch (h) {
-            case 1:
+        switch (choose) {
+            case "1":
                 System.out.println("Danh sách " + count++);
                 nhapRoom();
                 menuRoom();
                 System.out.println("---------------------------------------------");
                 break;
-            case 2:
+            case "2":
                 luuRoom();
                 System.out.println("---------------------------------------------");
                 break;
-            case 3:
+            case "3":
                 addNewService();
                 System.out.println("---------------------------------------------");
                 break;
-            case 4:
+            case "4":
                 System.err.println("Bạn đã thoát khỏi Room ! ");
                 System.exit(0);
                 System.out.println("---------------------------------------------");
                 break;
+            default:
+                System.out.println("nhập sai ! Enter để quay lại ");
+                String enter = new Scanner(System.in).nextLine();
+                menuRoom();
         }
     }
 
@@ -493,8 +538,7 @@ public class MainControllers extends RegularExpression implements Serializable {
         System.out.println("Mã dịch vụ : (SVRO-YYYY)");
         String idRoom = new Scanner(System.in).nextLine();
         String test = "^S[V]{1}+R[O]{1}+[-]+[0-9]{4}$";
-        Pattern.matches(test, idRoom);
-        while (Pattern.matches(test, idRoom) != true) {
+        while (!Pattern.matches(test, idRoom)) {
             System.out.println("Mời bạn nhập lại đúng định dạng : ");
             idRoom = new Scanner(System.in).nextLine();
         }
@@ -505,11 +549,13 @@ public class MainControllers extends RegularExpression implements Serializable {
 
 
         System.out.print("Diện tích sử dụng là : ");
-        double areaUsedRoom = new Scanner(System.in).nextDouble();
-        checkAreaUsedAndAreaPool(areaUsedRoom);
+        double areaUsedRoom = supportCheck();
+        while (areaUsedRoom < 30 ){
+            areaUsedRoom = supportCheck();
+        }
 
         System.out.print("Chi phí thuê là : ");
-        double rentalCostsRoom = new Scanner(System.in).nextDouble();
+        double rentalCostsRoom = supportCheck();
         checkRentalCosts(rentalCostsRoom);
 
 
@@ -535,7 +581,7 @@ public class MainControllers extends RegularExpression implements Serializable {
 
     private static void luuRoom() {
         boolean kq = SerializeFileFactory.luuFileRoom(dsRoom, "D://Hoc//hocLapTrinh//codeGym//cacModuleChuongTrinhHocCodeGym//module2//caseStudyModule2//luuFile/luuFileRoom.csv");
-        if (kq = true) {
+        if (!kq) {
             System.out.println("bạn đã lưu thành công danh sách Room ");
         } else {
             System.out.println("bạn lưu chưa thành công danh sách Room ");
@@ -557,14 +603,18 @@ public class MainControllers extends RegularExpression implements Serializable {
         System.out.println("1. Add New Customer\t" +
                 "2. Show Information Customers\t");
         System.out.println("Nhập vào lựa chọn của bạn : ");
-        int choose = new Scanner(System.in).nextInt();
+        String choose = new Scanner(System.in).nextLine();
         switch (choose) {
-            case 1:
+            case "1":
                 addNewCustomer();
                 break;
-            case 2:
+            case "2":
                 showInfoCustomer();
                 break;
+            default:
+                System.out.println("Bạn lựa chọn sai ! Enter để quay lại ");
+                String enter = new Scanner(System.in).nextLine();
+                menuCustomer();
         }
     }
 
@@ -632,7 +682,7 @@ public class MainControllers extends RegularExpression implements Serializable {
 
     private static void luuCustomer() {
         boolean kq = SerializeFileFactory.luuFileCustomer(dsCustomer, "D://Hoc//hocLapTrinh//codeGym//cacModuleChuongTrinhHocCodeGym//module2//caseStudyModule2//luuFile/luuFileCustomer.csv");
-        if (kq = true) {
+        if (!kq) {
             System.out.println("bạn đã lưu thành công danh sách Customer ");
         } else {
             System.out.println("bạn lưu chưa thành công danh sách Customer ");
@@ -695,9 +745,9 @@ public class MainControllers extends RegularExpression implements Serializable {
                 "2.\tBooking House\n" +
                 "3.\tBooking Room\n");
         System.out.println("Dịch vụ khách hàng muốn thuê là : ");
-        int choose = new Scanner(System.in).nextInt();
+        String choose = new Scanner(System.in).nextLine();
         switch (choose) {
-            case 1:
+            case "1":
                 docVL();
                 xuatVL();
                 System.out.println("Chọn Villa muốn thuê : ");
@@ -710,7 +760,7 @@ public class MainControllers extends RegularExpression implements Serializable {
                 }
                 break;
 
-            case 2:
+            case "2":
                 docHouse();
                 xuatHouse();
                 System.out.println("Chọn House muốn thuê : ");
@@ -723,7 +773,7 @@ public class MainControllers extends RegularExpression implements Serializable {
                 }
                 break;
 
-            case 3:
+            case "3":
                 docRoom();
                 xuatRoom();
                 System.out.println("Chọn Room muốn thuê : ");
@@ -735,6 +785,10 @@ public class MainControllers extends RegularExpression implements Serializable {
                     luuCustomerBooking();
                 }
                 break;
+            default:
+                System.out.println("Bạn lựa chọn sai ! Enter để quay lại ");
+                String enter = new Scanner(System.in).nextLine();
+                them();
         }
 
     }
@@ -742,9 +796,9 @@ public class MainControllers extends RegularExpression implements Serializable {
     //---------------------------------Task 9 ----------------------------------------------
 
 
-   public static ArrayList<Employee> dsEmployee = new ArrayList<Employee>();
+    static ArrayList<Employee> dsEmployee = new ArrayList<Employee>();
 
-    public static void addEmployee() {
+    public static void addEmployee() throws ParseException {
 
         System.out.println("Nhập vào tên Employee : ");
         String nameEmployee = new Scanner(System.in).nextLine();
@@ -784,15 +838,17 @@ public class MainControllers extends RegularExpression implements Serializable {
         dsEmployee.add(new Employee(nameEmployee, birthdayEmployee, idCardEmployee,
                 numberPhoneEmployee, emailEmployee, levelEmployee, locationEmployee, salaryEmployee));
         luuEmployee();
+
     }
 
-    private static void luuEmployee() {
+    private static void luuEmployee() throws ParseException {
         boolean kq = SerializeFileFactory.luuFileEmployee(dsEmployee, "D://Hoc//hocLapTrinh//codeGym//cacModuleChuongTrinhHocCodeGym//module2//caseStudyModule2//luuFile/luuFileEmployee.csv");
         if (kq = true) {
             System.out.println("bạn đã lưu thành công danh sách Employee ");
         } else {
             System.out.println("bạn lưu chưa thành công danh sách Employee ");
         }
+        fileEmployee();
     }
 
     private static void docEmployee() {
@@ -833,13 +889,14 @@ public class MainControllers extends RegularExpression implements Serializable {
         for (Integer key : set) {
             System.out.println(mapEmployee.get(key));
         }
+
         luuMapEmployee();
 
     }
 
     private static void luuMapEmployee() {
         boolean kq = SerializeFileFactory.luuFileEmployee(dsEmployee, "D://Hoc//hocLapTrinh//codeGym//cacModuleChuongTrinhHocCodeGym//module2//caseStudyModule2//luuFile/luuFileMapEmployee.csv");
-        if (kq = true) {
+        if (!kq) {
             System.out.println("bạn đã lưu thành công danh sách Employee ");
         } else {
             System.out.println("bạn lưu chưa thành công danh sách Employee ");
@@ -880,12 +937,10 @@ public class MainControllers extends RegularExpression implements Serializable {
             System.out.println("nhập vào vi trí khách hàng muốn mua vé ");
             int selection = new Scanner(System.in).nextInt();
             customersMovie.offer(dsCustomer.get(selection - 1).getNameCustomer());
-
             System.out.println("Còn customer nào mua nữa ko : (c/k) ?");
             String check = new Scanner(System.in).nextLine();
             if (check.equalsIgnoreCase("k")) {
                 break;
-
             } else {
                 if (numberOfBuy == movieTickets) {
                     System.out.println("đã bán hết vé !");
@@ -899,29 +954,55 @@ public class MainControllers extends RegularExpression implements Serializable {
                         count++;
                     }
                     break;
-
                 } else {
                     numberOfBuy++;
                 }
-
             }
         }
     }
+    //--------------------------------task 11 -------------------------------------
 
-
-    //--------------------------------task 12 -------------------------------------
-
-    public static void fileEmployee() throws ParseException  {
+    public static void fileEmployee() throws ParseException {
+        docEmployee();
         Stack<Employee> stackEmployee = new Stack<>();
-        for (int i = 0 ; i <= dsEmployee.size()  ; i++){
-            stackEmployee.push(dsEmployee.get(0));
+
+        for (int i = 0; i < dsEmployee.size(); i++) {
+            stackEmployee.push(dsEmployee.get(i));
         }
-        Iterator<Employee> iterator = stackEmployee.iterator();
-        while (iterator.hasNext()) {
-            Employee val = iterator.next();
-            System.out.println(val);
-        }
+        System.out.println("Đã đưa vào tủ hồ sơ");
+        searchStackEmployee(stackEmployee);
     }
+
+    public static void searchStackEmployee(Stack<Employee> stackEmployee) throws ParseException {
+        System.out.println("1 . Coi tủ hồ sơ : " + "\n" +
+                "2 . Tìm kiếm nhân viên trong tủ hồ sơ " + "\n" +
+                "3 . quay lại Menu ");
+        int choose = new Scanner(System.in).nextInt();
+        switch (choose) {
+            case 1:
+                Stream<Employee> stream = stackEmployee.stream();
+                stream.forEach(item -> System.out.println(item + "\n"));
+                fileEmployee();
+                break;
+            case 2:
+                System.out.println("Mời nhập vào tên nhân viên muốn tìm kiếm : ");
+                String searchName = new Scanner(System.in).nextLine();
+                List<Employee> result = stackEmployee.stream().filter(item -> item.getNameEmployee().equalsIgnoreCase(searchName)).collect(Collectors.toList());
+                if (result.size() > 0) {
+                    System.out.println("Có trong tủ hồ sơ");
+
+                } else {
+                    System.out.println("không có trong tủ hồ sơ ");
+                }
+                fileEmployee();
+                break;
+            case 3:
+                displayMainMennu();
+        }
+
+
+    }
+
 
 }
 

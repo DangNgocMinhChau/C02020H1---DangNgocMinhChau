@@ -1,6 +1,7 @@
 package View;
 
 import Controllers.MainControllers;
+import Emloyee.Employee;
 import Modules.Villa;
 import luuFile.SerializeFileFactory;
 
@@ -13,8 +14,10 @@ public class test {
     public static void main(String[] args) throws ParseException {
 
         MainControllers abc = new MainControllers();
+            while (true)
+        abc.displayMainMennu();
 
-        abc.fileEmployee();
+
 
 
 
