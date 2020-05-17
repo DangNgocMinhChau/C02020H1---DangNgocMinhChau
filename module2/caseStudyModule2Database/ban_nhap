@@ -1,0 +1,122 @@
+CREATE DATABASE furamar;
+USE furamar;
+CREATE TABLE vi_tri_nhan_vien(
+	stt_vi_tri_nhan_vien INT PRIMARY KEY AUTO_INCREMENT ,
+	ten_vi_tri_nhan_vien VARCHAR(50) NOT NULL
+	
+);
+
+CREATE TABLE trinh_do_nhan_vien(
+	stt_trinh_do_nhan_vien INT PRIMARY KEY AUTO_INCREMENT,
+	ten_trinh_do_nhan_vien VARCHAR(50) NOT NULL
+
+);
+
+CREATE TABLE bo_phan(
+ID_bo_phan INT PRIMARY KEY AUTO_INCREMENT,
+ten_bo_phan VARCHAR(50) NOT NULL
+
+);
+
+CREATE TABLE nhan_vien(
+	ma_nhan_vien VARCHAR(15) PRIMARY KEY,
+	ten_nhan_vien VARCHAR(50) NOT NULL ,
+	ngay_sinh_nhan_vien DATE NOT NULL,
+	so_CMND_nhan_vien INT NOT NULL UNIQUE ,
+	so_dien_thoai VARCHAR(10) NOT NULL UNIQUE ,
+	luong_nhan_vien FLOAT NOT NULL,
+	vi_tri INT ,
+	FOREIGN KEY (vi_tri) REFERENCES vi_tri_nhan_vien(stt_vi_tri_nhan_vien),
+	trinh_do INT,
+	FOREIGN KEY (trinh_do) REFERENCES trinh_do_nhan_vien(stt_trinh_do_nhan_vien),
+	bo_phan INT,
+    FOREIGN KEY (bo_phan) REFERENCES bo_phan(ID_bo_phan)
+);
+
+CREATE TABLE kieu_thue(
+	stt_kieu_thue INT PRIMARY KEY AUTO_INCREMENT,
+	ten_kieu_thue VARCHAR(50) NOT NULL
+		
+);
+
+CREATE TABLE dich_vu_di_kem(
+	ma_dich_vu_di_kem VARCHAR(50) PRIMARY KEY NOT NULL,
+	ten_dich_vu_di_kem VARCHAR(50) NOT NULL,
+	don_vi VARCHAR(15) NOT NULL,
+	gia_tien FLOAT NOT NULL
+
+);
+
+CREATE TABLE tieu_chuan_phong(
+stt_tieu_chuan_phong INT PRIMARY KEY AUTO_INCREMENT,
+ten_tieu_chuan_phong VARCHAR(50)
+);
+
+
+CREATE TABLE dich_vu(
+	ma_dich_vu VARCHAR (50) PRIMARY KEY NOT NULL,
+	ten_dich_vu VARCHAR (50) NOT NULL,
+	dien_tich_su_dung VARCHAR(50) NOT NULL,
+	chi_phi_thue FLOAT NOT NULL,
+	tieu_chuan_phong INT,
+	mo_ta_tien_nghi TEXT NOT NULL,
+	dien_tich_ho_boi VARCHAR (50),
+    so_tang INT NOT NULL,
+	dich_vu_mien_phi_di_kem VARCHAR(50),
+	so_luong_nguoi_toi_da INT NOT NULL,
+	kieu_thue INT ,
+	FOREIGN KEY (kieu_thue) REFERENCES kieu_thue(stt_kieu_thue),
+    FOREIGN KEY (tieu_chuan_phong) REFERENCES  tieu_chuan_phong (stt_tieu_chuan_phong)
+  
+
+);
+
+
+CREATE TABLE loai_khach_hang(
+	stt_loai_khach_hang INT PRIMARY KEY AUTO_INCREMENT,
+	ten_loai_khach_hang VARCHAR(50) NOT NULL
+
+);
+
+CREATE TABLE khach_hang(
+	ma_khach_hang INT PRIMARY KEY,
+	ten_khach_hang VARCHAR(50) NOT NULL,
+	ngay_sinh DATE NOT NULL,
+	gioi_tinh VARCHAR(50) NOT NULL,
+	so_CMND_khach_hang VARCHAR(50) NOT NULL UNIQUE,
+	so_DT_khach_hang VARCHAR(50) NOT NULL UNIQUE,
+	email_khach_hang VARCHAR(50) NOT NULL UNIQUE,
+	dia_chi VARCHAR(50) NOT NULL,
+	loai_khach_hang INT,
+	FOREIGN KEY (loai_khach_hang) REFERENCES loai_khach_hang(stt_loai_khach_hang)
+
+);
+
+
+
+CREATE TABLE hop_dong_thue(
+	ma_hop_dong INT PRIMARY KEY,
+	ten_khach_hang INT NOT NULL,
+	ten_nhan_vien VARCHAR(15) NOT NULL,
+	dich_vu_su_dung VARCHAR (50) ,
+	ngay_bat_dau DATE NOT NULL,
+	ngay_ket_thuc DATE NOT NULL,
+	so_tien_coc_truoc FLOAT NOT NULL,
+	tong_so_tien_thanh_toan FLOAT,
+ 
+	FOREIGN KEY (ten_khach_hang) REFERENCES khach_hang(ma_khach_hang),
+	FOREIGN KEY (ten_nhan_vien) REFERENCES nhan_vien(ma_nhan_vien),
+	FOREIGN KEY (dich_vu_su_dung) REFERENCES dich_vu(ma_dich_vu)
+	
+);
+
+    CREATE TABLE hop_dong_chi_tiet(
+    ID_hop_dong_chi_tiet INT PRIMARY KEY,
+    ma_hop_dong INT NOT NULL ,
+    ma_dich_vu_di_kem VARCHAR(50) ,
+    so_luong INT,
+	
+    FOREIGN KEY (ma_hop_dong)REFERENCES hop_dong_thue(ma_hop_dong),
+	FOREIGN KEY (ma_dich_vu_di_kem)REFERENCES dich_vu_di_kem (ma_dich_vu_di_kem)
+    
+    );
