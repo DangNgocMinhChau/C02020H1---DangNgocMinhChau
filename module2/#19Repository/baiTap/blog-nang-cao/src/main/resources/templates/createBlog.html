@@ -6,31 +6,41 @@
 </head>
 <body>
 <h2>Create New Blog</h2>
-    <div id="form">
-        <form th:action="@{/blog/create}" method="post" th:object="${blog}">
-            <div>
-                <label>Title</label>
-                <input type="text" th:field="${blog.title}">
-            </div>
+<div id="form">
+    <form th:action="@{/blog/create}" method="post" th:object="${blog}">
+        <div>
+            <label>Title</label>
+            <input type="text" th:field="${blog.title}">
+        </div>
 
-            <div>
-                <label>Content</label>
-                <input type="text" th:field="${blog.content}">
-            </div>
+        <div>
+            <label>Content</label>
+            <input type="text" th:field="${blog.content}">
+        </div>
 
-            <div>
-                <label>Author</label>
-                <input type="text" th:field="${blog.author}">
-            </div>
+        <div>
+            <label>Author</label>
+            <input type="text" th:field="${blog.author}">
+        </div>
 
-            <div>
-                <label>Date</label>
-                <input type="text" th:field="${blog.date}">
-            </div>
+        <div>
+            <label>Date</label>
+            <input type="text" th:field="${blog.date}">
+        </div>
 
-            <input type="submit" value="Create Blog">
-        </form>
-    </div>
+        <select th:field="*{category.id}">
+            <option th:each="list : ${categoryList}"
+                    th:value="${list.id}" th:text="${list.nameCategory}">
+            </option>
+        </select>
+
+
+        <input type="submit" value="Create Blog">
+
+    </form>
+
+
+</div>
 
 <footer th:replace="layout::footer"></footer>
 </body>

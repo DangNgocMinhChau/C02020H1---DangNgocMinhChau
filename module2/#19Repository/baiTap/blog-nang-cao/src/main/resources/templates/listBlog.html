@@ -12,6 +12,7 @@
             <thead>
             <tr>
                 <th>STT</th>
+                <th>Category</th>
                 <th>Title</th>
                 <th>Content</th>
                 <th>Author</th>
@@ -25,6 +26,7 @@
                 <th:block th:each="list : ${blogList.content}">
                     <tr>
                         <td th:text="${list.id}"></td>
+                        <td th:text="${list.category.nameCategory}"></td>
                         <td th:text="${list.title}"></td>
                         <td th:text="${list.content}"></td>
                         <td th:text="${list.author}"></td>

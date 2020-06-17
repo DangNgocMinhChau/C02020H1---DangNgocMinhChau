@@ -1,9 +1,11 @@
-package com.codegym.sevices;
+package com.codegym.sevices.customer;
 
 import com.codegym.models.Customer;
 import com.codegym.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CustomerServiceImpl implements CustomerService {
 
     @Autowired

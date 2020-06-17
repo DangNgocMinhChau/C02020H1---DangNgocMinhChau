@@ -1,4 +1,4 @@
-package com.codegym.sevices;
+package com.codegym.sevices.customer;
 
 import com.codegym.models.Customer;
 

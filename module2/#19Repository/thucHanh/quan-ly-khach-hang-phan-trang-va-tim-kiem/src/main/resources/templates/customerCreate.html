@@ -17,14 +17,11 @@
             <input type="text" th:field="${customer.lastName}">
         </div>
 
-        <tr >
-            <td>Province:</td>
-            <td>
-                <select th:field="*{province}">
-                    <option th:each="p : ${provinces}" th:value="${p.id}" th:text="${p.name}"></option>
-                </select>
-            </td>
-        </tr>
+        <div>
+            <label>Email</label>
+            <input type="text" th:field="${customer.email}">
+        </div>
+
         <input type="submit" value="Create Customer">
     </form>
 </div>

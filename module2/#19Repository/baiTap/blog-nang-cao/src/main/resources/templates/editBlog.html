@@ -29,6 +29,13 @@
             <input type="text" th:field="${blog.date}">
         </div>
 
+        <div>
+            <select th:field="${blog.category.id}">
+                <option th:each="list : ${categoryList}" th:value="${list.id}"
+                        th:text="${list.nameCategory}"></option>
+            </select>
+        </div>
+
         <input type="submit" value="Edit Blog">
     </form>
 </div>

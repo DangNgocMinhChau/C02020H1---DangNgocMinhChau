@@ -1,4 +1,4 @@
-package com.codegym.services;
+package com.codegym.services.blog;
 
 
 import com.codegym.models.Blog;

@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>them moi san pham</title>
 </head>
 <body>
-$END$
+<h1 style="color: crimson">them moi san pham</h1>
+<form th:action="@{/product/create}" method="post" th:object="${product}">
+    <div>
+        <label>id</label>
+        <input th:field="*{id}">
+    </div>
+
+    <div>
+        <label>name</label>
+        <input th:field="*{name}">
+    </div>
+
+    <div>
+        <label>code</label>
+        <input th:field="*{code}">
+    </div>
+
+    <div>
+        <label>date</label>
+        <input th:field="*{date}">
+    </div>
+    <input type="submit" value="Create">
+</form>
 </body>
 </html>

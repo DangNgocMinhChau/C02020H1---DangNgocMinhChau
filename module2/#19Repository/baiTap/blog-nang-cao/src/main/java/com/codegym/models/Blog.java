@@ -1,9 +1,6 @@
-package com.chaudang.models;
+package com.codegym.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
@@ -16,6 +13,10 @@ public class Blog {
     private String content;
     private String author;
     private Date date;
+
+    @ManyToOne
+    @JoinColumn(name = "class_blog_id")
+    private Category categoryClass;
 
     public Blog() {
     }
@@ -66,5 +67,13 @@ public class Blog {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public Category getCategory() {
+        return categoryClass;
+    }
+
+    public void setCategory(Category category) {
+        this.categoryClass = category;
     }
 }

@@ -1,12 +1,11 @@
-package com.chaudang.repository;
+package com.codegym.repository;
 
-import com.chaudang.models.Blog;
+
+import com.codegym.models.Blog;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface BlogRepository {
-    List<Blog> finAll();
-    Blog findById(Integer id);
-    void save(Blog blog);
-    void remove(Integer id);
+public interface BlogRepository extends JpaRepository<Blog,Integer> {
+
 }
