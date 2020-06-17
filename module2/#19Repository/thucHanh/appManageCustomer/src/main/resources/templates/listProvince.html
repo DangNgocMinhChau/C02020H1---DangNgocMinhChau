@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout::head">
+    <meta charset="UTF-8">
+    <title>List Province</title>
+</head>
+<body>
+<h3><a th:href="@{/province/create}">Create new Province</a></h3>
+<table id="common">
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Name Province</th>
+        <th>Edit Province</th>
+        <th>Delete Province</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <th:block th:each="list : ${provinceList}">
+        <tr>
+            <td th:text="${list.id}"></td>
+            <td th:text="${list.name}"></td>
+            <td><a th:href="@{/province/edit/__${list.id}__}">Edit</a></td>
+            <td><a th:href="@{/province/delete/__${list.id}__}">Delete</a></td>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
+<footer th:replace="layout::footer"></footer>
+</body>
+</html>

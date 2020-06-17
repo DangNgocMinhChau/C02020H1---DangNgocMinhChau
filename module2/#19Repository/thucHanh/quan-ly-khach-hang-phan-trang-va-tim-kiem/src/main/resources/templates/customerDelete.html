@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Edit</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout::head">
+    <meta charset="UTF-8">
+    <title>Create Province</title>
+</head>
+<body>
+<div id="form">
+    <form th:action="@{/customer/delete}" method="post" th:object="${customer}">
+        <input type="hidden" th:field="${customer.id}" >
+        <div>
+            <label>First Name</label>
+            <input type="text" th:field="${customer.firstName}" readonly="true">
+        </div>
+
+        <div>
+            <label>Last Name</label>
+            <input type="text" th:field="${customer.lastName}" readonly="true">
+        </div>
+        <input type="submit" value="Delete Customer">
+    </form>
+</div>
+<footer th:replace="layout::footer"></footer>
+</body>
+</html>
+</body>
+</html>
